@@ -1,0 +1,1578 @@
+{
+    "test_getCardsBySet": {
+        "sets": {
+            "/set/THB/theros-beyond-death/": {
+                "rot_in": "2020-01-13",
+                "rot_out": null,
+                "count_mythic": 31,
+                "count_rare": 114,
+                "count_common": 103,
+                "count_uncommon": 87
+            }
+        }
+    },
+    "test_getEventsDay": {
+        "days": {
+            "2020-01-04": {
+                "events-standard": {
+                    "/tournament/29864": {
+                        "decks": [
+                            "2628753",
+                            "2628754",
+                            "2628750",
+                            "2628751",
+                            "2628755",
+                            "2628749",
+                            "2628759",
+                            "2628762",
+                            "2628760",
+                            "2628764",
+                            "2628757",
+                            "2628758",
+                            "2628752",
+                            "2628756",
+                            "2628761",
+                            "2628763",
+                            "2628765",
+                            "2628766",
+                            "2628775",
+                            "2628774",
+                            "2628777",
+                            "2628776",
+                            "2628772",
+                            "2628773",
+                            "2628771",
+                            "2628779",
+                            "2628768",
+                            "2628770",
+                            "2628778",
+                            "2628767",
+                            "2628769",
+                            "2628780"
+                        ],
+                        "occ": {
+                            "Fervent Champion": {
+                                "raw": 12,
+                                "(6-0)": 4,
+                                "(4-2)": 8
+                            },
+                            "Scorch Spitter": {
+                                "raw": 4,
+                                "(6-0)": 4
+                            },
+                            "Tin Street Dodger": {
+                                "raw": 4,
+                                "(6-0)": 4
+                            },
+                            "Robber of the Rich": {
+                                "raw": 4,
+                                "(6-0)": 4
+                            },
+                            "Runaway Steam-Kin": {
+                                "raw": 4,
+                                "(6-0)": 4
+                            },
+                            "Legion Warboss": {
+                                "raw": 4,
+                                "(6-0)": 4
+                            },
+                            "Claim the Firstborn": {
+                                "raw": 8,
+                                "(6-0)": 4,
+                                "(5-1)": 4
+                            },
+                            "Infuriate": {
+                                "raw": 3,
+                                "(6-0)": 3
+                            },
+                            "Shock": {
+                                "raw": 4,
+                                "(6-0)": 4
+                            },
+                            "Light Up the Stage": {
+                                "raw": 4,
+                                "(6-0)": 4
+                            },
+                            "Embercleave": {
+                                "raw": 12,
+                                "(6-0)": 4,
+                                "(4-2)": 8
+                            },
+                            "Castle Embereth": {
+                                "raw": 4,
+                                "(6-0)": 4
+                            },
+                            "Mountain": {
+                                "raw": 46,
+                                "(6-0)": 16,
+                                "(5-1)": 7,
+                                "(4-2)": 23
+                            },
+                            "Reckless Air Strike": {
+                                "raw": 4,
+                                "(6-0)": 4
+                            },
+                            "Redcap Melee": {
+                                "raw": 2,
+                                "(6-0)": 1,
+                                "(5-1)": 1
+                            },
+                            "Lava Coil": {
+                                "raw": 4,
+                                "(6-0)": 3,
+                                "(4-2)": 1
+                            },
+                            "Unchained Berserker": {
+                                "raw": 4,
+                                "(6-0)": 4
+                            },
+                            "Hydroid Krasis": {
+                                "raw": 6,
+                                "(5-1)": 4,
+                                "(4-2)": 2
+                            },
+                            "Leafkin Druid": {
+                                "raw": 4,
+                                "(5-1)": 4
+                            },
+                            "Paradise Druid": {
+                                "raw": 12,
+                                "(5-1)": 6,
+                                "(4-2)": 6
+                            },
+                            "Risen Reef": {
+                                "raw": 4,
+                                "(5-1)": 4
+                            },
+                            "Cavalier of Thorns": {
+                                "raw": 4,
+                                "(5-1)": 4
+                            },
+                            "Vraska, Golgari Queen": {
+                                "raw": 8,
+                                "(5-1)": 6,
+                                "(4-2)": 2
+                            },
+                            "Nissa, Who Shakes the World": {
+                                "raw": 8,
+                                "(5-1)": 4,
+                                "(4-2)": 4
+                            },
+                            "Aether Gust": {
+                                "raw": 17,
+                                "(5-1)": 4,
+                                "(4-2)": 13
+                            },
+                            "Noxious Grasp": {
+                                "raw": 24,
+                                "(5-1)": 12,
+                                "(4-2)": 12
+                            },
+                            "Casualties of War": {
+                                "raw": 15,
+                                "(5-1)": 8,
+                                "(4-2)": 7
+                            },
+                            "Breeding Pool": {
+                                "raw": 8,
+                                "(5-1)": 4,
+                                "(4-2)": 4
+                            },
+                            "Fabled Passage": {
+                                "raw": 37,
+                                "(5-1)": 15,
+                                "(4-2)": 22
+                            },
+                            "Forest": {
+                                "raw": 39,
+                                "(5-1)": 18,
+                                "(4-2)": 21
+                            },
+                            "Island": {
+                                "raw": 18,
+                                "(5-1)": 2,
+                                "(4-2)": 16
+                            },
+                            "Overgrown Tomb": {
+                                "raw": 24,
+                                "(5-1)": 12,
+                                "(4-2)": 12
+                            },
+                            "Swamp": {
+                                "raw": 42,
+                                "(5-1)": 18,
+                                "(4-2)": 24
+                            },
+                            "Temple of Malady": {
+                                "raw": 2,
+                                "(5-1)": 2
+                            },
+                            "Temple of Mystery": {
+                                "raw": 6,
+                                "(5-1)": 2,
+                                "(4-2)": 4
+                            },
+                            "Watery Grave": {
+                                "raw": 4,
+                                "(5-1)": 4
+                            },
+                            "Return to Nature": {
+                                "raw": 4,
+                                "(5-1)": 2,
+                                "(4-2)": 2
+                            },
+                            "Lovestruck Beast": {
+                                "raw": 16,
+                                "(5-1)": 9,
+                                "(4-2)": 7
+                            },
+                            "Mystical Dispute": {
+                                "raw": 23,
+                                "(5-1)": 4,
+                                "(4-2)": 19
+                            },
+                            "Shifting Ceratops": {
+                                "raw": 5,
+                                "(5-1)": 3,
+                                "(4-2)": 2
+                            },
+                            "Cauldron Familiar": {
+                                "raw": 24,
+                                "(5-1)": 12,
+                                "(4-2)": 12
+                            },
+                            "Gilded Goose": {
+                                "raw": 20,
+                                "(5-1)": 8,
+                                "(4-2)": 12
+                            },
+                            "Mayhem Devil": {
+                                "raw": 16,
+                                "(5-1)": 8,
+                                "(4-2)": 8
+                            },
+                            "Murderous Rider": {
+                                "raw": 20,
+                                "(5-1)": 6,
+                                "(4-2)": 14
+                            },
+                            "Thrashing Brontodon": {
+                                "raw": 10,
+                                "(5-1)": 5,
+                                "(4-2)": 5
+                            },
+                            "Wicked Wolf": {
+                                "raw": 11,
+                                "(5-1)": 6,
+                                "(4-2)": 5
+                            },
+                            "Korvold, Fae-Cursed King": {
+                                "raw": 8,
+                                "(5-1)": 3,
+                                "(4-2)": 5
+                            },
+                            "Massacre Girl": {
+                                "raw": 12,
+                                "(5-1)": 5,
+                                "(4-2)": 7
+                            },
+                            "Status // Statue": {
+                                "raw": 2,
+                                "(5-1)": 2
+                            },
+                            "Witch's Oven": {
+                                "raw": 24,
+                                "(5-1)": 12,
+                                "(4-2)": 12
+                            },
+                            "Trail of Crumbs": {
+                                "raw": 20,
+                                "(5-1)": 8,
+                                "(4-2)": 12
+                            },
+                            "Blood Crypt": {
+                                "raw": 24,
+                                "(5-1)": 8,
+                                "(4-2)": 16
+                            },
+                            "Castle Locthwain": {
+                                "raw": 9,
+                                "(5-1)": 4,
+                                "(4-2)": 5
+                            },
+                            "Stomping Ground": {
+                                "raw": 12,
+                                "(5-1)": 4,
+                                "(4-2)": 8
+                            },
+                            "Duress": {
+                                "raw": 18,
+                                "(5-1)": 8,
+                                "(4-2)": 10
+                            },
+                            "Act of Treason": {
+                                "raw": 1,
+                                "(5-1)": 1
+                            },
+                            "Witch's Vengeance": {
+                                "raw": 2,
+                                "(5-1)": 2
+                            },
+                            "Gutterbones": {
+                                "raw": 12,
+                                "(5-1)": 4,
+                                "(4-2)": 8
+                            },
+                            "Priest of Forgotten Gods": {
+                                "raw": 4,
+                                "(5-1)": 4
+                            },
+                            "Rix Maadi Reveler": {
+                                "raw": 3,
+                                "(5-1)": 3
+                            },
+                            "Judith, the Scourge Diva": {
+                                "raw": 2,
+                                "(5-1)": 2
+                            },
+                            "Midnight Reaper": {
+                                "raw": 10,
+                                "(5-1)": 7,
+                                "(4-2)": 3
+                            },
+                            "Cavalier of Night": {
+                                "raw": 7,
+                                "(5-1)": 2,
+                                "(4-2)": 5
+                            },
+                            "Mask of Immolation": {
+                                "raw": 2,
+                                "(5-1)": 2
+                            },
+                            "Dreadhorde Butcher": {
+                                "raw": 3,
+                                "(5-1)": 3
+                            },
+                            "Embereth Shieldbreaker": {
+                                "raw": 8,
+                                "(5-1)": 2,
+                                "(4-2)": 6
+                            },
+                            "Epic Downfall": {
+                                "raw": 7,
+                                "(5-1)": 1,
+                                "(4-2)": 6
+                            },
+                            "Rotting Regisaur": {
+                                "raw": 10,
+                                "(5-1)": 2,
+                                "(4-2)": 8
+                            },
+                            "Garruk, Cursed Huntsman": {
+                                "raw": 1,
+                                "(5-1)": 1
+                            },
+                            "Ritual of Soot": {
+                                "raw": 3,
+                                "(5-1)": 3
+                            },
+                            "Bonecrusher Giant": {
+                                "raw": 15,
+                                "(4-2)": 15
+                            },
+                            "Sphinx of Foresight": {
+                                "raw": 16,
+                                "(4-2)": 16
+                            },
+                            "Cavalier of Flame": {
+                                "raw": 16,
+                                "(4-2)": 16
+                            },
+                            "Cavalier of Gales": {
+                                "raw": 12,
+                                "(4-2)": 12
+                            },
+                            "Kenrith, the Returned King": {
+                                "raw": 9,
+                                "(4-2)": 9
+                            },
+                            "Teferi, Time Raveler": {
+                                "raw": 16,
+                                "(4-2)": 16
+                            },
+                            "Justice Strike": {
+                                "raw": 11,
+                                "(4-2)": 11
+                            },
+                            "Shimmer of Possibility": {
+                                "raw": 11,
+                                "(4-2)": 11
+                            },
+                            "Deafening Clarion": {
+                                "raw": 16,
+                                "(4-2)": 16
+                            },
+                            "Fires of Invention": {
+                                "raw": 16,
+                                "(4-2)": 16
+                            },
+                            "Castle Vantress": {
+                                "raw": 12,
+                                "(4-2)": 12
+                            },
+                            "Hallowed Fountain": {
+                                "raw": 16,
+                                "(4-2)": 16
+                            },
+                            "Plains": {
+                                "raw": 21,
+                                "(4-2)": 21
+                            },
+                            "Sacred Foundry": {
+                                "raw": 9,
+                                "(4-2)": 9
+                            },
+                            "Steam Vents": {
+                                "raw": 16,
+                                "(4-2)": 16
+                            },
+                            "Temple of Epiphany": {
+                                "raw": 12,
+                                "(4-2)": 12
+                            },
+                            "Temple of Triumph": {
+                                "raw": 12,
+                                "(4-2)": 12
+                            },
+                            "Devout Decree": {
+                                "raw": 10,
+                                "(4-2)": 10
+                            },
+                            "Disenchant": {
+                                "raw": 6,
+                                "(4-2)": 6
+                            },
+                            "Tithe Taker": {
+                                "raw": 18,
+                                "(4-2)": 18
+                            },
+                            "Planar Cleansing": {
+                                "raw": 2,
+                                "(4-2)": 2
+                            },
+                            "Knight of the Ebon Legion": {
+                                "raw": 8,
+                                "(4-2)": 8
+                            },
+                            "Blacklance Paragon": {
+                                "raw": 8,
+                                "(4-2)": 8
+                            },
+                            "Stormfist Crusader": {
+                                "raw": 8,
+                                "(4-2)": 8
+                            },
+                            "Spawn of Mayhem": {
+                                "raw": 4,
+                                "(4-2)": 4
+                            },
+                            "Drill Bit": {
+                                "raw": 8,
+                                "(4-2)": 8
+                            },
+                            "Tournament Grounds": {
+                                "raw": 8,
+                                "(4-2)": 8
+                            },
+                            "Legion's End": {
+                                "raw": 6,
+                                "(4-2)": 6
+                            },
+                            "Sorcerous Spyglass": {
+                                "raw": 5,
+                                "(4-2)": 5
+                            },
+                            "Knight of Autumn": {
+                                "raw": 3,
+                                "(4-2)": 3
+                            },
+                            "Feasting Troll King": {
+                                "raw": 3,
+                                "(4-2)": 3
+                            },
+                            "Sorin, Vengeful Bloodlord": {
+                                "raw": 2,
+                                "(4-2)": 2
+                            },
+                            "Castle Garenbrig": {
+                                "raw": 3,
+                                "(4-2)": 3
+                            },
+                            "Godless Shrine": {
+                                "raw": 4,
+                                "(4-2)": 4
+                            },
+                            "Temple Garden": {
+                                "raw": 4,
+                                "(4-2)": 4
+                            },
+                            "Giant Killer": {
+                                "raw": 5,
+                                "(4-2)": 5
+                            },
+                            "Despark": {
+                                "raw": 2,
+                                "(4-2)": 2
+                            },
+                            "Kaya, Orzhov Usurper": {
+                                "raw": 2,
+                                "(4-2)": 2
+                            },
+                            "Solar Blaze": {
+                                "raw": 2,
+                                "(4-2)": 2
+                            },
+                            "Faerie Guidemother": {
+                                "raw": 4,
+                                "(4-2)": 4
+                            },
+                            "Haazda Marshal": {
+                                "raw": 1,
+                                "(4-2)": 1
+                            },
+                            "Healer's Hawk": {
+                                "raw": 4,
+                                "(4-2)": 4
+                            },
+                            "Hunted Witness": {
+                                "raw": 4,
+                                "(4-2)": 4
+                            },
+                            "Loyal Pegasus": {
+                                "raw": 4,
+                                "(4-2)": 4
+                            },
+                            "Venerated Loxodon": {
+                                "raw": 4,
+                                "(4-2)": 4
+                            },
+                            "Raise the Alarm": {
+                                "raw": 4,
+                                "(4-2)": 4
+                            },
+                            "Unbreakable Formation": {
+                                "raw": 3,
+                                "(4-2)": 3
+                            },
+                            "Heraldic Banner": {
+                                "raw": 4,
+                                "(4-2)": 4
+                            },
+                            "Castle Ardenvale": {
+                                "raw": 4,
+                                "(4-2)": 4
+                            },
+                            "Gideon's Sacrifice": {
+                                "raw": 1,
+                                "(4-2)": 1
+                            },
+                            "Glass Casket": {
+                                "raw": 3,
+                                "(4-2)": 3
+                            },
+                            "Hushbringer": {
+                                "raw": 4,
+                                "(4-2)": 4
+                            },
+                            "Gideon Blackblade": {
+                                "raw": 4,
+                                "(4-2)": 4
+                            },
+                            "Time Wipe": {
+                                "raw": 2,
+                                "(4-2)": 2
+                            },
+                            "Brazen Borrower": {
+                                "raw": 4,
+                                "(4-2)": 4
+                            },
+                            "Frilled Mystic": {
+                                "raw": 4,
+                                "(4-2)": 4
+                            },
+                            "Nightpack Ambusher": {
+                                "raw": 4,
+                                "(4-2)": 4
+                            },
+                            "Opt": {
+                                "raw": 3,
+                                "(4-2)": 3
+                            },
+                            "Growth Spiral": {
+                                "raw": 4,
+                                "(4-2)": 4
+                            },
+                            "Quench": {
+                                "raw": 2,
+                                "(4-2)": 2
+                            },
+                            "Sinister Sabotage": {
+                                "raw": 2,
+                                "(4-2)": 2
+                            },
+                            "Negate": {
+                                "raw": 1,
+                                "(4-2)": 1
+                            },
+                            "Chemister's Insight": {
+                                "raw": 2,
+                                "(4-2)": 2
+                            },
+                            "Commence the Endgame": {
+                                "raw": 1,
+                                "(4-2)": 1
+                            },
+                            "Beanstalk Giant": {
+                                "raw": 2,
+                                "(4-2)": 2
+                            },
+                            "Assassin's Trophy": {
+                                "raw": 2,
+                                "(4-2)": 2
+                            }
+                        }
+                    }
+                },
+                "events-pioneer": {
+                    "/tournament/29865": {
+                        "decks": [
+                            "2628811",
+                            "2628785",
+                            "2628802",
+                            "2628792",
+                            "2628788",
+                            "2628812",
+                            "2628787",
+                            "2628809",
+                            "2628801",
+                            "2628791",
+                            "2628796",
+                            "2628810",
+                            "2628795",
+                            "2628808",
+                            "2628806",
+                            "2628786",
+                            "2628790",
+                            "2628804",
+                            "2628783",
+                            "2628793",
+                            "2628803",
+                            "2628805",
+                            "2628797",
+                            "2628789",
+                            "2628807",
+                            "2628784",
+                            "2628794",
+                            "2628799",
+                            "2628798",
+                            "2628800"
+                        ],
+                        "occ": {
+                            "Teferi, Time Raveler": {
+                                "raw": 9,
+                                "(5-0)": 3,
+                                "(4-1)": 6
+                            },
+                            "Gideon, Ally of Zendikar": {
+                                "raw": 4,
+                                "(5-0)": 2,
+                                "(4-1)": 2
+                            },
+                            "Teferi, Hero of Dominaria": {
+                                "raw": 6,
+                                "(5-0)": 2,
+                                "(4-1)": 4
+                            },
+                            "Elspeth, Sun's Champion": {
+                                "raw": 4,
+                                "(5-0)": 2,
+                                "(4-1)": 2
+                            },
+                            "Isolate": {
+                                "raw": 3,
+                                "(5-0)": 3
+                            },
+                            "Opt": {
+                                "raw": 10,
+                                "(5-0)": 4,
+                                "(4-1)": 6
+                            },
+                            "Azorius Charm": {
+                                "raw": 11,
+                                "(5-0)": 4,
+                                "(4-1)": 7
+                            },
+                            "Censor": {
+                                "raw": 5,
+                                "(5-0)": 3,
+                                "(4-1)": 2
+                            },
+                            "Dovin's Veto": {
+                                "raw": 10,
+                                "(5-0)": 3,
+                                "(4-1)": 7
+                            },
+                            "Absorb": {
+                                "raw": 11,
+                                "(5-0)": 3,
+                                "(4-1)": 8
+                            },
+                            "Supreme Verdict": {
+                                "raw": 12,
+                                "(5-0)": 4,
+                                "(4-1)": 8
+                            },
+                            "Dig Through Time": {
+                                "raw": 7,
+                                "(5-0)": 3,
+                                "(4-1)": 4
+                            },
+                            "Castle Ardenvale": {
+                                "raw": 6,
+                                "(5-0)": 2,
+                                "(4-1)": 4
+                            },
+                            "Castle Vantress": {
+                                "raw": 5,
+                                "(5-0)": 2,
+                                "(4-1)": 3
+                            },
+                            "Field of Ruin": {
+                                "raw": 5,
+                                "(5-0)": 3,
+                                "(4-1)": 2
+                            },
+                            "Glacial Fortress": {
+                                "raw": 12,
+                                "(5-0)": 4,
+                                "(4-1)": 8
+                            },
+                            "Hallowed Fountain": {
+                                "raw": 12,
+                                "(5-0)": 4,
+                                "(4-1)": 8
+                            },
+                            "Island": {
+                                "raw": 22,
+                                "(5-0)": 7,
+                                "(4-1)": 13,
+                                "(3-2)": 2
+                            },
+                            "Plains": {
+                                "raw": 12,
+                                "(5-0)": 4,
+                                "(4-1)": 8
+                            },
+                            "Aether Gust": {
+                                "raw": 6,
+                                "(5-0)": 2,
+                                "(3-2)": 4
+                            },
+                            "Apostle of Purifying Light": {
+                                "raw": 1,
+                                "(5-0)": 1
+                            },
+                            "Rest in Peace": {
+                                "raw": 9,
+                                "(5-0)": 2,
+                                "(4-1)": 7
+                            },
+                            "Detention Sphere": {
+                                "raw": 4,
+                                "(5-0)": 1,
+                                "(4-1)": 3
+                            },
+                            "Monastery Mentor": {
+                                "raw": 6,
+                                "(5-0)": 2,
+                                "(4-1)": 4
+                            },
+                            "Mystical Dispute": {
+                                "raw": 6,
+                                "(5-0)": 3,
+                                "(4-1)": 2,
+                                "(3-2)": 1
+                            },
+                            "Summary Dismissal": {
+                                "raw": 2,
+                                "(5-0)": 2
+                            },
+                            "Lyra Dawnbringer": {
+                                "raw": 5,
+                                "(5-0)": 1,
+                                "(4-1)": 4
+                            },
+                            "Stonecoil Serpent": {
+                                "raw": 12,
+                                "(5-0)": 4,
+                                "(3-2)": 8
+                            },
+                            "Bomat Courier": {
+                                "raw": 12,
+                                "(5-0)": 4,
+                                "(3-2)": 8
+                            },
+                            "Gingerbrute": {
+                                "raw": 12,
+                                "(5-0)": 4,
+                                "(3-2)": 8
+                            },
+                            "Hope of Ghirapur": {
+                                "raw": 6,
+                                "(5-0)": 2,
+                                "(3-2)": 4
+                            },
+                            "Emry, Lurker of the Loch": {
+                                "raw": 5,
+                                "(5-0)": 3,
+                                "(3-2)": 2
+                            },
+                            "Skilled Animator": {
+                                "raw": 12,
+                                "(5-0)": 4,
+                                "(3-2)": 8
+                            },
+                            "Whirler Rogue": {
+                                "raw": 3,
+                                "(5-0)": 2,
+                                "(3-2)": 1
+                            },
+                            "Stubborn Denial": {
+                                "raw": 8,
+                                "(5-0)": 4,
+                                "(3-2)": 4
+                            },
+                            "Wild Slash": {
+                                "raw": 16,
+                                "(5-0)": 3,
+                                "(4-1)": 8,
+                                "(3-2)": 5
+                            },
+                            "Shrapnel Blast": {
+                                "raw": 12,
+                                "(5-0)": 4,
+                                "(3-2)": 8
+                            },
+                            "Ghostfire Blade": {
+                                "raw": 12,
+                                "(5-0)": 4,
+                                "(3-2)": 8
+                            },
+                            "Ensoul Artifact": {
+                                "raw": 12,
+                                "(5-0)": 4,
+                                "(3-2)": 8
+                            },
+                            "Darksteel Citadel": {
+                                "raw": 12,
+                                "(5-0)": 4,
+                                "(3-2)": 8
+                            },
+                            "Mountain": {
+                                "raw": 37,
+                                "(5-0)": 1,
+                                "(4-1)": 34,
+                                "(3-2)": 2
+                            },
+                            "Mutavault": {
+                                "raw": 21,
+                                "(5-0)": 2,
+                                "(4-1)": 15,
+                                "(3-2)": 4
+                            },
+                            "Shivan Reef": {
+                                "raw": 12,
+                                "(5-0)": 4,
+                                "(3-2)": 8
+                            },
+                            "Spire of Industry": {
+                                "raw": 9,
+                                "(5-0)": 3,
+                                "(3-2)": 6
+                            },
+                            "Spirebluff Canal": {
+                                "raw": 12,
+                                "(5-0)": 4,
+                                "(3-2)": 8
+                            },
+                            "Steam Vents": {
+                                "raw": 6,
+                                "(5-0)": 2,
+                                "(3-2)": 4
+                            },
+                            "Hangarback Walker": {
+                                "raw": 6,
+                                "(5-0)": 2,
+                                "(3-2)": 4
+                            },
+                            "Roast": {
+                                "raw": 7,
+                                "(5-0)": 3,
+                                "(3-2)": 4
+                            },
+                            "Aethersphere Harvester": {
+                                "raw": 15,
+                                "(5-0)": 3,
+                                "(4-1)": 7,
+                                "(3-2)": 5
+                            },
+                            "Metallic Rebuke": {
+                                "raw": 2,
+                                "(5-0)": 2
+                            },
+                            "The Antiquities War": {
+                                "raw": 4,
+                                "(5-0)": 2,
+                                "(3-2)": 2
+                            },
+                            "Knight of the Ebon Legion": {
+                                "raw": 16,
+                                "(4-1)": 16
+                            },
+                            "Dusk Legion Zealot": {
+                                "raw": 3,
+                                "(4-1)": 3
+                            },
+                            "Gifted Aetherborn": {
+                                "raw": 8,
+                                "(4-1)": 8
+                            },
+                            "Murderous Rider": {
+                                "raw": 16,
+                                "(4-1)": 16
+                            },
+                            "Kalitas, Traitor of Ghet": {
+                                "raw": 9,
+                                "(4-1)": 9
+                            },
+                            "Blood Baron of Vizkopa": {
+                                "raw": 3,
+                                "(4-1)": 3
+                            },
+                            "Champion of Dusk": {
+                                "raw": 4,
+                                "(4-1)": 4
+                            },
+                            "Liliana, the Last Hope": {
+                                "raw": 2,
+                                "(4-1)": 2
+                            },
+                            "Sorin, Imperious Bloodlord": {
+                                "raw": 4,
+                                "(4-1)": 4
+                            },
+                            "Fatal Push": {
+                                "raw": 20,
+                                "(4-1)": 20
+                            },
+                            "Thoughtseize": {
+                                "raw": 20,
+                                "(4-1)": 20
+                            },
+                            "Grasp of Darkness": {
+                                "raw": 5,
+                                "(4-1)": 5
+                            },
+                            "Castle Locthwain": {
+                                "raw": 15,
+                                "(4-1)": 15
+                            },
+                            "Caves of Koilos": {
+                                "raw": 1,
+                                "(4-1)": 1
+                            },
+                            "Concealed Courtyard": {
+                                "raw": 4,
+                                "(4-1)": 4
+                            },
+                            "Godless Shrine": {
+                                "raw": 7,
+                                "(4-1)": 7
+                            },
+                            "Isolated Chapel": {
+                                "raw": 3,
+                                "(4-1)": 3
+                            },
+                            "Swamp": {
+                                "raw": 56,
+                                "(4-1)": 56
+                            },
+                            "Urborg, Tomb of Yawgmoth": {
+                                "raw": 4,
+                                "(4-1)": 4
+                            },
+                            "Dark Betrayal": {
+                                "raw": 2,
+                                "(4-1)": 2
+                            },
+                            "Duress": {
+                                "raw": 14,
+                                "(4-1)": 14
+                            },
+                            "Damping Sphere": {
+                                "raw": 15,
+                                "(4-1)": 11,
+                                "(3-2)": 4
+                            },
+                            "Devout Decree": {
+                                "raw": 4,
+                                "(4-1)": 4
+                            },
+                            "Legion's End": {
+                                "raw": 1,
+                                "(4-1)": 1
+                            },
+                            "Noxious Grasp": {
+                                "raw": 3,
+                                "(4-1)": 3
+                            },
+                            "Ob Nixilis's Cruelty": {
+                                "raw": 2,
+                                "(4-1)": 2
+                            },
+                            "Leyline of the Void": {
+                                "raw": 12,
+                                "(4-1)": 12
+                            },
+                            "Ghitu Lavarunner": {
+                                "raw": 4,
+                                "(4-1)": 4
+                            },
+                            "Monastery Swiftspear": {
+                                "raw": 4,
+                                "(4-1)": 4
+                            },
+                            "Soul-Scar Mage": {
+                                "raw": 8,
+                                "(4-1)": 8
+                            },
+                            "Eidolon of the Great Revel": {
+                                "raw": 4,
+                                "(4-1)": 4
+                            },
+                            "Viashino Pyromancer": {
+                                "raw": 3,
+                                "(4-1)": 3
+                            },
+                            "Bonecrusher Giant": {
+                                "raw": 8,
+                                "(4-1)": 8
+                            },
+                            "Shock": {
+                                "raw": 2,
+                                "(4-1)": 2
+                            },
+                            "Lightning Strike": {
+                                "raw": 6,
+                                "(4-1)": 6
+                            },
+                            "Searing Blood": {
+                                "raw": 4,
+                                "(4-1)": 4
+                            },
+                            "Light Up the Stage": {
+                                "raw": 4,
+                                "(4-1)": 4
+                            },
+                            "Wizard's Lightning": {
+                                "raw": 4,
+                                "(4-1)": 4
+                            },
+                            "Castle Embereth": {
+                                "raw": 3,
+                                "(4-1)": 3
+                            },
+                            "Ramunap Ruins": {
+                                "raw": 8,
+                                "(4-1)": 8
+                            },
+                            "Chandra, Acolyte of Flame": {
+                                "raw": 2,
+                                "(4-1)": 2
+                            },
+                            "Goblin Chainwhirler": {
+                                "raw": 7,
+                                "(4-1)": 7
+                            },
+                            "Chandra, Torch of Defiance": {
+                                "raw": 6,
+                                "(4-1)": 6
+                            },
+                            "Bloodsoaked Champion": {
+                                "raw": 12,
+                                "(4-1)": 12
+                            },
+                            "Dread Wanderer": {
+                                "raw": 8,
+                                "(4-1)": 8
+                            },
+                            "Scrapheap Scrounger": {
+                                "raw": 8,
+                                "(4-1)": 8
+                            },
+                            "Rankle, Master of Pranks": {
+                                "raw": 6,
+                                "(4-1)": 6
+                            },
+                            "Cast Down": {
+                                "raw": 4,
+                                "(4-1)": 4
+                            },
+                            "Ultimate Price": {
+                                "raw": 5,
+                                "(4-1)": 5
+                            },
+                            "Desecration Demon": {
+                                "raw": 2,
+                                "(4-1)": 2
+                            },
+                            "Scavenging Ooze": {
+                                "raw": 4,
+                                "(4-1)": 2,
+                                "(3-2)": 2
+                            },
+                            "Sylvan Caryatid": {
+                                "raw": 5,
+                                "(4-1)": 4,
+                                "(3-2)": 1
+                            },
+                            "Courser of Kruphix": {
+                                "raw": 3,
+                                "(4-1)": 3
+                            },
+                            "Tireless Tracker": {
+                                "raw": 8,
+                                "(4-1)": 5,
+                                "(3-2)": 3
+                            },
+                            "Questing Beast": {
+                                "raw": 5,
+                                "(4-1)": 2,
+                                "(3-2)": 3
+                            },
+                            "Siege Rhino": {
+                                "raw": 4,
+                                "(4-1)": 4
+                            },
+                            "Obzedat, Ghost Council": {
+                                "raw": 2,
+                                "(4-1)": 2
+                            },
+                            "Abrupt Decay": {
+                                "raw": 3,
+                                "(4-1)": 3
+                            },
+                            "Assassin's Trophy": {
+                                "raw": 2,
+                                "(4-1)": 2
+                            },
+                            "Abzan Charm": {
+                                "raw": 2,
+                                "(4-1)": 2
+                            },
+                            "Blooming Marsh": {
+                                "raw": 4,
+                                "(4-1)": 4
+                            },
+                            "Fabled Passage": {
+                                "raw": 2,
+                                "(4-1)": 2
+                            },
+                            "Forest": {
+                                "raw": 39,
+                                "(4-1)": 12,
+                                "(3-2)": 27
+                            },
+                            "Overgrown Tomb": {
+                                "raw": 4,
+                                "(4-1)": 4
+                            },
+                            "Sunpetal Grove": {
+                                "raw": 1,
+                                "(4-1)": 1
+                            },
+                            "Temple Garden": {
+                                "raw": 3,
+                                "(4-1)": 3
+                            },
+                            "Woodland Cemetery": {
+                                "raw": 1,
+                                "(4-1)": 1
+                            },
+                            "Deafening Silence": {
+                                "raw": 1,
+                                "(4-1)": 1
+                            },
+                            "Cry of the Carnarium": {
+                                "raw": 2,
+                                "(4-1)": 2
+                            },
+                            "Kambal, Consul of Allocation": {
+                                "raw": 2,
+                                "(4-1)": 2
+                            },
+                            "Gutterbones": {
+                                "raw": 4,
+                                "(4-1)": 4
+                            },
+                            "Spawn of Mayhem": {
+                                "raw": 4,
+                                "(4-1)": 4
+                            },
+                            "Lifebane Zombie": {
+                                "raw": 2,
+                                "(4-1)": 2
+                            },
+                            "Narset, Parter of Veils": {
+                                "raw": 5,
+                                "(4-1)": 5
+                            },
+                            "Blessed Alliance": {
+                                "raw": 2,
+                                "(4-1)": 2
+                            },
+                            "Commit // Memory": {
+                                "raw": 1,
+                                "(4-1)": 1
+                            },
+                            "Seal Away": {
+                                "raw": 3,
+                                "(4-1)": 3
+                            },
+                            "Cast Out": {
+                                "raw": 3,
+                                "(4-1)": 3
+                            },
+                            "Geier Reach Sanitarium": {
+                                "raw": 2,
+                                "(4-1)": 2
+                            },
+                            "Temple of Enlightenment": {
+                                "raw": 2,
+                                "(4-1)": 2
+                            },
+                            "Pithing Needle": {
+                                "raw": 2,
+                                "(4-1)": 2
+                            },
+                            "Nyx-Fleece Ram": {
+                                "raw": 3,
+                                "(4-1)": 3
+                            },
+                            "Settle the Wreckage": {
+                                "raw": 2,
+                                "(4-1)": 2
+                            },
+                            "Arboreal Grazer": {
+                                "raw": 7,
+                                "(4-1)": 3,
+                                "(3-2)": 4
+                            },
+                            "Elvish Mystic": {
+                                "raw": 8,
+                                "(4-1)": 2,
+                                "(3-2)": 6
+                            },
+                            "Llanowar Elves": {
+                                "raw": 8,
+                                "(4-1)": 2,
+                                "(3-2)": 6
+                            },
+                            "Elvish Rejuvenator": {
+                                "raw": 8,
+                                "(4-1)": 4,
+                                "(3-2)": 4
+                            },
+                            "Cavalier of Thorns": {
+                                "raw": 7,
+                                "(4-1)": 3,
+                                "(3-2)": 4
+                            },
+                            "Golos, Tireless Pilgrim": {
+                                "raw": 3,
+                                "(4-1)": 3
+                            },
+                            "Ulvenwald Hydra": {
+                                "raw": 4,
+                                "(4-1)": 3,
+                                "(3-2)": 1
+                            },
+                            "World Breaker": {
+                                "raw": 6,
+                                "(4-1)": 3,
+                                "(3-2)": 3
+                            },
+                            "Ulamog, the Ceaseless Hunger": {
+                                "raw": 4,
+                                "(4-1)": 1,
+                                "(3-2)": 3
+                            },
+                            "Ugin, the Spirit Dragon": {
+                                "raw": 7,
+                                "(4-1)": 4,
+                                "(3-2)": 3
+                            },
+                            "Nissa's Pilgrimage": {
+                                "raw": 8,
+                                "(4-1)": 4,
+                                "(3-2)": 4
+                            },
+                            "Blast Zone": {
+                                "raw": 2,
+                                "(4-1)": 1,
+                                "(3-2)": 1
+                            },
+                            "Cascading Cataracts": {
+                                "raw": 1,
+                                "(4-1)": 1
+                            },
+                            "Castle Garenbrig": {
+                                "raw": 10,
+                                "(4-1)": 4,
+                                "(3-2)": 6
+                            },
+                            "Radiant Fountain": {
+                                "raw": 7,
+                                "(4-1)": 3,
+                                "(3-2)": 4
+                            },
+                            "Sanctum of Ugin": {
+                                "raw": 5,
+                                "(4-1)": 3,
+                                "(3-2)": 2
+                            },
+                            "Sea Gate Wreckage": {
+                                "raw": 1,
+                                "(4-1)": 1
+                            },
+                            "Shrine of the Forsaken Gods": {
+                                "raw": 8,
+                                "(4-1)": 4,
+                                "(3-2)": 4
+                            },
+                            "Walking Ballista": {
+                                "raw": 7,
+                                "(4-1)": 1,
+                                "(3-2)": 6
+                            },
+                            "Spatial Contortion": {
+                                "raw": 7,
+                                "(4-1)": 3,
+                                "(3-2)": 4
+                            },
+                            "Voracious Hydra": {
+                                "raw": 6,
+                                "(4-1)": 2,
+                                "(3-2)": 4
+                            },
+                            "Thought-Knot Seer": {
+                                "raw": 6,
+                                "(4-1)": 3,
+                                "(3-2)": 3
+                            },
+                            "Earthshaker Khenra": {
+                                "raw": 2,
+                                "(4-1)": 2
+                            },
+                            "Kari Zev, Skyship Raider": {
+                                "raw": 2,
+                                "(4-1)": 2
+                            },
+                            "Rekindling Phoenix": {
+                                "raw": 3,
+                                "(4-1)": 3
+                            },
+                            "Glorybringer": {
+                                "raw": 4,
+                                "(4-1)": 4
+                            },
+                            "Embercleave": {
+                                "raw": 1,
+                                "(4-1)": 1
+                            },
+                            "Scavenger Grounds": {
+                                "raw": 1,
+                                "(4-1)": 1
+                            },
+                            "Tormod's Crypt": {
+                                "raw": 4,
+                                "(4-1)": 4
+                            },
+                            "Chandra's Defeat": {
+                                "raw": 1,
+                                "(4-1)": 1
+                            },
+                            "Lava Coil": {
+                                "raw": 3,
+                                "(4-1)": 3
+                            },
+                            "Scab-Clan Berserker": {
+                                "raw": 4,
+                                "(4-1)": 4
+                            },
+                            "Bone Picker": {
+                                "raw": 2,
+                                "(4-1)": 2
+                            },
+                            "Fungal Infection": {
+                                "raw": 2,
+                                "(4-1)": 2
+                            },
+                            "Collective Brutality": {
+                                "raw": 1,
+                                "(4-1)": 1
+                            },
+                            "Epic Downfall": {
+                                "raw": 2,
+                                "(4-1)": 2
+                            },
+                            "Davriel, Rogue Shadowmage": {
+                                "raw": 1,
+                                "(4-1)": 1
+                            },
+                            "Lost Legacy": {
+                                "raw": 1,
+                                "(4-1)": 1
+                            },
+                            "Jace, Architect of Thought": {
+                                "raw": 1,
+                                "(4-1)": 1
+                            },
+                            "Syncopate": {
+                                "raw": 2,
+                                "(4-1)": 2
+                            },
+                            "Hieroglyphic Illumination": {
+                                "raw": 2,
+                                "(4-1)": 2
+                            },
+                            "Irrigated Farmland": {
+                                "raw": 1,
+                                "(4-1)": 1
+                            },
+                            "Brazen Borrower": {
+                                "raw": 2,
+                                "(3-2)": 2
+                            },
+                            "The Royal Scions": {
+                                "raw": 4,
+                                "(3-2)": 4
+                            },
+                            "Dive Down": {
+                                "raw": 2,
+                                "(3-2)": 2
+                            },
+                            "Disdainful Stroke": {
+                                "raw": 1,
+                                "(3-2)": 1
+                            },
+                            "Kari Zev's Expertise": {
+                                "raw": 2,
+                                "(3-2)": 2
+                            },
+                            "Hazoret the Fervent": {
+                                "raw": 1,
+                                "(3-2)": 1
+                            },
+                            "Burning-Tree Emissary": {
+                                "raw": 4,
+                                "(3-2)": 4
+                            },
+                            "Jadelight Ranger": {
+                                "raw": 4,
+                                "(3-2)": 4
+                            },
+                            "Whisperwood Elemental": {
+                                "raw": 1,
+                                "(3-2)": 1
+                            },
+                            "Vivien, Arkbow Ranger": {
+                                "raw": 4,
+                                "(3-2)": 4
+                            },
+                            "Nissa, Who Shakes the World": {
+                                "raw": 4,
+                                "(3-2)": 4
+                            },
+                            "Biomass Mutation": {
+                                "raw": 1,
+                                "(3-2)": 1
+                            },
+                            "Shapers' Sanctuary": {
+                                "raw": 2,
+                                "(3-2)": 2
+                            },
+                            "Nykthos, Shrine to Nyx": {
+                                "raw": 4,
+                                "(3-2)": 4
+                            },
+                            "Unravel the Aether": {
+                                "raw": 1,
+                                "(3-2)": 1
+                            },
+                            "Heaven // Earth": {
+                                "raw": 1,
+                                "(3-2)": 1
+                            },
+                            "Reclamation Sage": {
+                                "raw": 2,
+                                "(3-2)": 2
+                            },
+                            "Nylea's Disciple": {
+                                "raw": 2,
+                                "(3-2)": 2
+                            },
+                            "Vine Mare": {
+                                "raw": 2,
+                                "(3-2)": 2
+                            },
+                            "Arbor Colossus": {
+                                "raw": 1,
+                                "(3-2)": 1
+                            },
+                            "Pia Nalaar": {
+                                "raw": 1,
+                                "(3-2)": 1
+                            },
+                            "Blazing Volley": {
+                                "raw": 1,
+                                "(3-2)": 1
+                            },
+                            "Grafdigger's Cage": {
+                                "raw": 1,
+                                "(3-2)": 1
+                            },
+                            "Ghirapur Aether Grid": {
+                                "raw": 1,
+                                "(3-2)": 1
+                            },
+                            "Oblivion Sower": {
+                                "raw": 2,
+                                "(3-2)": 2
+                            },
+                            "Arch of Orazca": {
+                                "raw": 1,
+                                "(3-2)": 1
+                            },
+                            "Perilous Vault": {
+                                "raw": 2,
+                                "(3-2)": 2
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+}

@@ -1,0 +1,2856 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.9.1" />
+<title>mtgather.models API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>mtgather.models</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">import mysql.connector
+from mysql.connector.errors import *
+import os, csv, json, sys, math
+import pandas as pd
+import numpy as np
+from datetime import timedelta, date, datetime
+
+&#34;&#34;&#34;A module containing the datatype definitions.
+
+&#34;&#34;&#34;
+
+def daterange(first, last):
+    dates = []
+    for n in range(int ((last - first).days)+1):
+        dates.append(first + timedelta(n))
+    return dates
+
+class Card:
+    &#34;&#34;&#34;Card Datatype
+
+    The Card Class is used to represent one card in MTG. The class is also used as a Database model for one card.
+    This card does not represent any particular moment in time. A card class, should represent the full extend of the card&#39;s life
+    in the MTG Game given.
+
+    This Card Class is chock full of deprecated methods and attributes. Documentation is on hold for this class
+    because it needs to be completely overhauled.
+
+    Deprecated Attributes are not incuded in Documentation.
+
+    Attributes:
+        title: A string of title of the card.
+        price: A Pandas Dataframe of the paper pricing history.
+        tix: A Pandas Dataframe of the MTGO pricing history
+        set: A string of the URL of the set.
+        echo_id: An int of the echomtg unique identifier.
+        rarity: A string of the rarity of the card &#34;rare&#34;, &#34;mythic&#34;, &#34;uncommon&#34;, ...
+        release_date: A datetime object of the release date of the card. *Note:* Not the prerelease date. Same value as set release date.
+    &#34;&#34;&#34;
+    price_data_columns =[&#34;date_unix&#34;, &#34;datetime&#34;, &#34;price_dollars&#34;]
+    occ_data_columns = [
+        &#39;card&#39;,
+        &#39;date&#39;,
+        &#39;date_unix&#39;,
+        &#39;raw&#39;,
+        &#39;event&#39;,
+        &#39;deck_nums&#39;,
+        &#39;1st Place&#39;,
+        &#39;2nd Place&#39;,
+        &#39;3rd Place&#39;,
+        &#39;4th Place&#39;,
+        &#39;5th Place&#39;,
+        &#39;6th Place&#39;,
+        &#39;7th Place&#39;,
+        &#39;8th Place&#39;,
+        &#39;9th Place&#39;,
+        &#39;10th Place&#39;,
+        &#39;11th Place&#39;,
+        &#39;12th Place&#39;,
+        &#39;13th Place&#39;,
+        &#39;14th Place&#39;,
+        &#39;15th Place&#39;,
+        &#39;16th Place&#39;,
+        &#39;(9-0)&#39;,
+        &#39;(8-0)&#39;,
+        &#39;(7-0)&#39;,
+        &#39;(6-0)&#39;,
+        &#39;(5-0)&#39;,
+        &#39;(6-1)&#39;,
+        &#39;(5-2)&#39;,
+        &#39;(8-1)&#39;,
+        &#39;(7-2)&#39;,
+        &#39;(7-1)&#39;,
+        &#39;(6-2)&#39;]
+
+    def __init__(self, id=-1, title=&#34;&#34;, occ = pd.DataFrame(columns=occ_data_columns), price=pd.DataFrame(columns=[&#39;date&#39;,&#39;price&#39;]),tix=pd.DataFrame(columns=[&#39;date&#39;,&#39;price&#39;]),
+                set=None,echo_id=-1,rarity=None, release_date = None, rotation_date=None):
+
+        &#34;&#34;&#34;Init of a card object.&#34;&#34;&#34;
+        assert isinstance(occ, pd.DataFrame), &#34;non dataframe passed through occ&#34;
+        assert isinstance(price, pd.DataFrame), &#34;non dataframe passed through price&#34;
+        self.id = id
+        self.title = title
+        self.release_date = release_date
+        self.rotation_date = rotation_date
+        self.occ = occ
+        self.price = price
+        self.tix = tix
+        self.set = set
+        self.echo_id = echo_id
+        self.rarity = rarity
+
+    def __repr__(self):
+        object = {
+            &#39;id&#39;: self.echo_id,
+            &#39;title&#39;: self.title,
+            &#39;release_date&#39;: datetime.strftime(self.release_date, &#34;%Y-%m-%d&#34;) if self.release_date!=None else None,
+            &#39;rotation_date&#39;: datetime.strftime(self.rotation_date, &#34;%Y-%m-%d&#34;) if self.rotation_date!=None else None,
+            &#39;set&#39;: self.set,
+            &#39;rarity&#39;:self.rarity
+        }
+        return (&#34;(%s, %s)&#34; % (object[&#39;title&#39;], object[&#39;id&#39;]))
+
+    def __eq__(self, o):
+        &#34;&#34;&#34; Returns True or False based on echo_id&#34;&#34;&#34;
+        return isinstance(o, Card) and o.echo_id == self.echo_id
+
+    def __str__(self):
+        &#34;&#34;&#34; Returns readable string of card.
+        Important for logging and such.&#34;&#34;&#34;
+        return str(self.echo_id) + &#34;-&#34; + str(self.title)
+
+    def isEmpty(self):
+        &#34;&#34;&#34; Deprecated from other versions&#34;&#34;&#34;
+        #TODO
+        return False;
+
+    def dateparse(time_unix):
+        &#34;&#34;&#34; Converts unix timestamp into string&#34;&#34;&#34;
+        return datetime.utcfromtimestamp(int(time_unix)/1000).strftime(&#39;%Y-%m-%d %H:%M:%S&#39;)
+
+    def CardPrices(self, start=None, end=None):
+        &#34;&#34;&#34; Returns an of array of CardPrice objects from the start and end dates.
+
+        Args:
+            start: a datetime indicating the start of desired CardPrice retrieval.
+            end: a datetime indication the end of desired CardPrice retrieval
+        &#34;&#34;&#34;
+        if start == None:
+            start = card.release_date
+        if end == None:
+            end=date.today()
+
+        prices = []
+        for day in daterange(start, end):
+            try:
+                prices.append(CardPrice(self, day))
+            except DatePricingError as e:
+                print(&#34;No Price info on day &#34;, day)
+        return prices
+
+class CardOccurance:
+    &#34;&#34;&#34;CardOccurance Datatype
+
+    Sometimes the name &#39;play&#39; is used as a synonym for CardOccurance.
+
+    The CardOccurance datatype is used as a wrapper class of the Card datatype.
+    CardOccurance holds a card as well as a date which the occurance takes place.
+    Unlike Card, CardOccurance&#39;s price and tix attribute is a float, instead of a dataframe.
+    This is because the price of a CardOccurance coorelates to the price of the
+    associated card at the date it was played.
+
+    Attributes:
+        card: As Card object representing the associated card of the card Occurance.
+        event: An Event object representing the Event the card was played in.
+        occ: A JSON object (Python Dictionary) of the occurance data.
+        date: A datetime object of the play date.
+        format: A string of the format of the event the card appeared in. &#39;pioneer&#39;, &#39;standard&#39;, &#39;modern&#39;, etc
+        id: A string as a unique row identifier for a MySQL database of form &#39;&lt;card.echo_id&gt;:&lt;event.id&gt;:&lt;date&gt;&#39;
+        price: A float of the paper cost of the card the day of the event.
+        tix. A float of the MTGO cost of the card the day of the event.
+    &#34;&#34;&#34;
+    def __init__(self, card, event, occ, date=None):
+        &#34;&#34;&#34;Initialization of the Card with Card, Event, and occ data mandatory&#34;&#34;&#34;
+        self.card = card
+        self.event = event
+        self.format = event.format
+        self.occ = occ
+        if not date==None:
+            self.date = date
+        else:
+            self.date = event.date
+        self.id = str(card.echo_id)+ &#34;:&#34; + str(event.id)+ &#34;:&#34; + str(self.date)
+
+
+    def __repr__(self):
+        &#34;&#34;&#34; Provides a json based represenation of the CardOccurance object &#34;&#34;&#34;
+
+        object = {
+            &#34;event&#34;: self.event.__repr__(),
+            &#34;occ&#34;: self.occ
+        }
+        return object
+
+    def __eq__(self, o):
+        &#34;&#34;&#34;Overrides the == operator to establish equality based on the card and the event&#34;&#34;&#34;
+        isinstance(o, CardOccurance) and self.card == o.card and self.event == o.event
+
+class CardPrice:
+
+    &#34;&#34;&#34;CardPrice Datatype
+
+    The CardPrice datatype is used as a wrapper class of the Card datatype.
+    CardPrice holds a card as well as a date for when the card was at that price.
+    Unlike Card, CardPrice&#39;s price and tix attribute is a float, instead of a dataframe.
+    This is because the price of a CardPrice&#39;s price  coorelates to the price of the
+    associated card at the date it was played.
+
+    Attributes:
+        card: As Card object representing the associated card of the card Occurance.
+        date: A datetime object of the play date.
+        id: A string as a unique row identifier for a MySQL database of form &#39;&lt;card.echo_id&gt;:&lt;date&gt;&#39;
+        price: A float of the paper cost of the card the day of the event.
+        tix. A float of the MTGO cost of the card the day of the event.
+    &#34;&#34;&#34;
+    def __init__(self, card, date, price=None, tix=None):
+        self.card = card
+        self.date = date
+        if price==None:
+            try:
+                self.price = self.card.price.loc[self.date][&#39;price&#39;]
+            except KeyError as e:
+                print(e)
+                print(&#34;Price at date : &#34;, self.date, &#34; unavailable.&#34;)
+                self.price=None
+
+        if tix ==None:
+            try:
+                self.tix = self.card.tix.loc[self.date][&#39;price&#39;]
+            except KeyError as e:
+                print(e)
+                print(&#34;tix at date : &#34;, self.date, &#34; unavailable.&#34;)
+                self.tix=None
+
+        if self.price==None and self.tix==None:
+            print(date)
+            raise DatePricingError(&#34;No Pricing History&#34;)
+
+class Database:
+    &#34;&#34;&#34;A Class for the Database object
+
+    Database is used as an object which interacts with a MySQL database. Check GITHUB page for schema details on MySQL database.
+
+    Attributes:
+        config: path to file containing database connection information
+        cnx: a mysql-connector connection.
+
+    &#34;&#34;&#34;
+    def __init__(self, path = &#39;../config.json&#39;):
+        &#34;&#34;&#34;Inits Database with specified config file. On reading of config
+
+        Args:
+            path: a string &#39;/path/to/config.json&#39;
+
+        &#34;&#34;&#34;
+        try:
+            with open(path, &#39;r&#39;) as json_file:
+                text = json_file.read()
+                json_data = json.loads(text)
+                self.config = json_data
+            self.cnx = mysql.connector.connect(user=self.config[&#34;database&#34;][&#34;user&#34;], password=self.config[&#34;database&#34;][&#34;password&#34;],
+                                          host=self.config[&#34;database&#34;][&#34;host&#34;],
+                                          database= (self.config[&#34;database&#34;][&#34;dev_database_name&#34;] if self.config[&#34;dev&#34;]==&#34;True&#34; else self.config[&#34;database&#34;][&#34;database_name&#34;]))
+
+        except Exception as e:
+            # TODO: throw custom exception for error on initial
+            print(e)
+            self.cnx = None
+            self.config = None
+
+    def __del__(self):
+        &#34;&#34;&#34;Closes cnx connection&#34;&#34;&#34;
+        self.cnx.close()
+
+    def isConnected(self):
+        &#34;&#34;&#34;Returns if connection is connected&#34;&#34;&#34;
+        if(self.cnx != None):
+            return True
+        else:
+            return False
+
+    def addCard(self, card):
+        # TODO: upload release date too
+        &#34;&#34;&#34;Adds Card Model to Database.
+
+        Args:
+            card: A Card object which contains title, set, echo_id, and release_date.
+
+        &#34;&#34;&#34;
+        cursor = self.cnx.cursor()
+        insert_card = (&#34;INSERT INTO cards&#34;
+                        &#34;&#34;&#34;(title,set_mtg, echo_id, rarity)&#34;&#34;&#34;
+                        &#34;VALUES (%s, %s, %s, %s)&#34;)
+        insert_card_data = (card.title, card.set, card.echo_id, card.rarity)
+        try:
+            cursor.execute(insert_card, insert_card_data)
+            self.cnx.commit()
+        except Exception as err:
+            print(err)
+            return False
+        id = cursor.lastrowid
+        return id
+
+    def addCards(self, cards):
+        &#34;&#34;&#34;Adds list of Cards to database using addCard()
+
+        Args:
+            cards: an array of cards.
+        &#34;&#34;&#34;
+        for card in cards:
+            self.addCard(card)
+            print(str(card.echo_id) + &#34; - &#34; + card.title)
+
+    def getCards(self, from_date= date(2017, 9, 28)):
+        &#34;&#34;&#34;Retrieves all cards in the Cards table.
+
+        Returns:
+            Array of Card objects.
+        &#34;&#34;&#34;
+        cursor = self.cnx.cursor()
+        query = (&#34;SELECT * FROM `cards` &#34;
+                &#34; WHERE rotation_date is NULL OR rotation_date &gt;= %s &#34;)
+        vals = (from_date,)
+        cursor.execute(query,vals)
+        cards = []
+        for row in cursor.fetchall():
+            cards.append(Card(title=row[0],set = row[1], echo_id = row[5], rarity=row[4], release_date=row[2], rotation_date=row[3]))
+        return cards
+
+    def getCardByTitle(self, title, date=date.today()):
+        # RESOLVE: What happens when there is no card by this name?
+        &#34;&#34;&#34;Retrieves one card from the database by title.
+
+        Retrieves a card from the cards table. If multiple cards are queried (IE two of the same card from different
+        sets) then the date arg is used to reconcile which age of card is required. The most recent version available
+        is always returned.
+
+        For example:
+            Sorcerous Spyglass returns two cards, one from Ixilan and Eldrain. By passing in a date (date of event) we can further
+            filter our results. If the event occured before the release of Eldrain then the Ixilan version is return.
+
+        Args:
+            title: a string of the title of the desired card.
+            date: a datetime object to resolve multiple cards of the same name.
+
+        Returns:
+            A Card object.
+        &#34;&#34;&#34;
+        cursor = self.cnx.cursor()
+        query = (&#34;SELECT * FROM `cards` WHERE `title` = %s AND `release_date` &lt;= %s ORDER BY `release_date` DESC&#34;)
+        values = (title, date)
+        try:
+            cursor.execute(query, values)
+        except Exception as err:
+            print(err)
+            return False
+
+        try:
+            data = cursor.fetchall()[0]
+        except IndexError:
+            return False
+
+        return Card(title=data[0], set=data[1], echo_id=data[5], rarity=data[4], release_date=data[2])
+
+    def getCardByID(self, id, date=date.today()):
+        &#34;&#34;&#34;Retrieves one card from the database by ECHO ID.
+
+        Retrieves a card from the cards table. If multiple cards are queried (IE two of the same card from different
+        sets) then the date arg is used to reconcile which age of card is required. The most recent version available
+        is always returned.
+
+        For example:
+            Sorcerous Spyglass returns two cards, one from Ixilan and Eldrain. By passing in a date (date of event) we can further
+            filter our results. If the event occured before the release of Eldrain then the Ixilan version is return.
+
+        Args:
+            title: a string of the title of the desired card.
+            date: a datetime object to resolve multiple cards of the same name.
+
+        Returns:
+            A Card object.
+        &#34;&#34;&#34;
+        cursor = self.cnx.cursor()
+        query = (&#34;SELECT * FROM `cards` WHERE `echo_id` = %s AND `release_date` &lt;= %s ORDER BY `release_date` DESC&#34;)
+        values = (id, date)
+        try:
+            cursor.execute(query, values)
+        except Exception as err:
+            print(err)
+            return False
+
+        try:
+            data = cursor.fetchall()[0]
+        except IndexError:
+            return False
+
+        return Card(title=data[0], set=data[1], echo_id=data[5], rarity=data[4], release_date=data[2])
+
+    def addEvent(self, event):
+        &#34;&#34;&#34;Adds Event object to database
+
+        Args:
+            event: An Event object
+
+        Returns: A boolean, True if successful addition, False if failed.
+        &#34;&#34;&#34;
+        cursor = self.cnx.cursor()
+        insert_tournament = (&#34;INSERT INTO tournaments&#34;
+                            &#34;&#34;&#34;(date, url, format, id)&#34;&#34;&#34;
+                            &#34;VALUES (%s, %s, %s, %s)&#34;)
+        insert_values = (event.date, event.event_url, event.format, event.id)
+        try:
+            cursor.execute(insert_tournament, insert_values)
+            self.cnx.commit()
+        except Exception as err:
+            print(err)
+            return False
+        return True
+
+    def addEvents(self, events):
+        &#34;&#34;&#34;Adds list of Event objects using addEvent()&#34;&#34;&#34;
+        for event in events:
+            self.addEvent(event)
+        return True
+
+    def getLastTimelineDate(self):
+        &#34;&#34;&#34;Deprecated: Retrieves the date of the occurance collected
+
+        This method is useful for when there is weekly/daily collection so a script can pickup where it left off.
+
+        Returns:
+            A datetime date object.
+        &#34;&#34;&#34;
+        cursor = self.cnx.cursor()
+        query = (&#34;&#34;&#34;SELECT MAX(date) FROM `card_series`;&#34;&#34;&#34;)
+        try:
+            cursor.execute(query)
+        except Exception as err:
+            print(err)
+            return False
+
+        for row in cursor.fetchall():
+            if row[0]==None:
+                return False
+            return row[0]
+        return False
+
+    def getLastEventDate(self, format=None):
+        &#34;&#34;&#34;Retrieves the date of the event collected
+
+        This method is useful for when there is weekly/daily collection so a script can pickup where it left off.
+
+        Returns:
+            A datetime date object.
+        &#34;&#34;&#34;
+        cursor = self.cnx.cursor()
+        query = (&#34;&#34;&#34;SELECT MAX(date) FROM `tournaments`;&#34;&#34;&#34;)
+        if format!= None:
+            query = (&#34;SELECT MAX(date) FROM `tournaments` WHERE `format` = &#39;&#34;+format+&#34;&#39;;&#34;)
+        try:
+            cursor.execute(query)
+        except Exception as err:
+            print(err)
+            return False
+
+        for row in cursor.fetchall():
+            if row[0]==None:
+                return False
+            return row[0]
+        return False
+
+    def addCardOccurance(self, play):
+        &#34;&#34;&#34;Adds a CardOccurance Object to the Database
+
+        Args:
+            play: A CardOccurance object
+        &#34;&#34;&#34;
+        assert isinstance(play, CardOccurance), &#34;Expected instance of CardOccurance, got &#34; + str(play)
+
+        cursor = self.cnx.cursor()
+        insert = (&#34;INSERT INTO card_series&#34;
+                        &#34;&#34;&#34;(rowid, title,date,tot_occ,event_,format,deck_nums,
+                        first_place,secon_place,third_place,fourt_place,
+                        fifth_place,sixth_place,seven_place,eigth_place,
+                        ninet_place,tenth_place,twelt_place,thtee_place,
+                        fotee_place,fitee_place,sitee_place,nineo,eighto,
+                        seveno,sixo,fiveo,sixone,fivetwo,eightone,seventwo,
+                        sevenone,sixtwo,echo_id)&#34;&#34;&#34;
+                        &#34;VALUES (%s, %s, %s, %s, %s, %s, %s, %s,%s,%s, %s, %s, %s,%s, %s, %s, %s,%s, %s, %s, %s,%s, %s, %s, %s,%s, %s, %s, %s,%s, %s, %s, %s,%s)&#34;)
+
+        occ = {
+            &#39;raw&#39;:0,
+            &#39;1st Place&#39;:0,
+            &#39;2nd Place&#39;:0,
+            &#39;3rd Place&#39;:0,
+            &#39;4th Place&#39;:0,
+            &#39;5th Place&#39;:0,
+            &#39;6th Place&#39;:0,
+            &#39;7th Place&#39;:0,
+            &#39;8th Place&#39;:0,
+            &#39;9th Place&#39;:0,
+            &#39;10th Place&#39;:0,
+            &#39;11th Place&#39;:0,
+            &#39;12th Place&#39;:0,
+            &#39;13th Place&#39;:0,
+            &#39;14th Place&#39;:0,
+            &#39;15th Place&#39;:0,
+            &#39;16th Place&#39;:0,
+            &#39;(9-0)&#39;: 0,
+            &#39;(8-0)&#39;: 0,
+            &#39;(7-0)&#39;: 0,
+            &#39;(6-0)&#39;: 0,
+            &#39;(5-0)&#39;: 0,
+            &#39;(6-1)&#39;: 0,
+            &#39;(5-2)&#39;: 0,
+            &#39;(8-1)&#39;: 0,
+            &#39;(7-2)&#39;: 0,
+            &#39;(7-1)&#39;: 0,
+            &#39;(6-2)&#39;: 0
+        }
+        data = play.occ
+        occ.update(data)
+        insert_data = (play.id, play.card.title, play.date, occ[&#39;raw&#39;], str(play.event.event_url),play.format, len(play.event.decks) , occ[&#39;1st Place&#39;],
+                                occ[&#39;2nd Place&#39;], occ[&#39;3rd Place&#39;], occ[&#39;5th Place&#39;], occ[&#39;6th Place&#39;], occ[&#39;7th Place&#39;], occ[&#39;8th Place&#39;],
+                                occ[&#39;9th Place&#39;], occ[&#39;10th Place&#39;], occ[&#39;11th Place&#39;], occ[&#39;12th Place&#39;], occ[&#39;13th Place&#39;], occ[&#39;14th Place&#39;],
+                                occ[&#39;15th Place&#39;], occ[&#39;16th Place&#39;],occ[&#39;(9-0)&#39;],occ[&#39;(8-0)&#39;],occ[&#39;(7-0)&#39;],occ[&#39;(6-0)&#39;],occ[&#39;(5-0)&#39;],
+                                occ[&#39;(6-1)&#39;],occ[&#39;(5-2)&#39;],occ[&#39;(8-1)&#39;],occ[&#39;(7-2)&#39;],occ[&#39;(7-1)&#39;],occ[&#39;(6-2)&#39;],play.card.echo_id)
+
+        try:
+            cursor.execute(insert, insert_data)
+        except IntegrityError as err:
+            print(err)
+            return False
+        self.cnx.commit()
+
+    def addCardPrice(self, cardprice):
+        &#34;&#34;&#34; Adds CardPrice object to the database.
+
+        Args:
+            cardprice: An instance of a CardPrice object to be serialized and added.
+
+        Returns:
+            A boolean describing success of database addition.
+        &#34;&#34;&#34;
+
+        assert isinstance(cardprice, CardPrice), &#34;Expected instance of CardPrice, got &#34; + str(play)
+
+        cursor = self.cnx.cursor()
+        insert = (&#34;INSERT INTO price_series&#34;
+                &#34;&#34;&#34;(date, title, price, tix, rowid, echo_id)&#34;&#34;&#34;
+                &#34;VALUES (%s, %s, %s, %s, %s, %s)&#34;)
+        rowid= str(cardprice.card.echo_id) + &#34;:&#34; + str(cardprice.date)
+        cpp = float(cardprice.price) if cardprice.price != None else None
+        cpt = float(cardprice.tix) if cardprice.tix != None else None
+        insert_data = (cardprice.date, cardprice.card.title, cpp, cpt, rowid, cardprice.card.echo_id)
+
+        try:
+            cursor.execute(insert, insert_data)
+        except IntegrityError as err:
+            print(err)
+            return False
+        self.cnx.commit()
+        return True
+
+    def addCardPrices(self, cardprices):
+        &#34;&#34;&#34; Adds and array of cardprices&#34;&#34;&#34;
+        for p in cardprices:
+            self.addCardPrice(p)
+
+    def getCardPriceByDate(self, card, date):
+        &#34;&#34;&#34; Retrieves a the price of a card at a specific date
+
+        Args:
+            card: Card object containing data about the desired card price.
+            date: datetime of the desired price.
+        &#34;&#34;&#34;
+
+        cursor = self.cnx.cursor(dictionary=True)
+        query = (&#34;SELECT * FROM `price_series` WHERE `title` = %s AND `date` = %s&#34;)
+        data = (card.title, date)
+        cursor.execute(query, data)
+        return cursor.fetchone()
+
+    def getOccurancesByCard(self, card):
+        &#34;&#34;&#34;Retrieves a list of CardOccurance in database based on card&#34;&#34;&#34;
+
+        cursor = self.cnx.cursor(dictionary=True)
+        query = (&#34;SELECT * FROM `card_series` WHERE `title` = &#39;&#34;+card.title+&#34;&#39; ORDER BY `date` DESC&#34;)
+        cursor.execute(query)
+
+        plays = []
+        for p in cursor.fetchall():
+            # Building the the Objects that CardOccurance wraps around
+            event = Event(event_url=p[&#39;event_&#39;], format=p[&#39;format&#39;], date=p[&#39;date&#39;])
+
+            #Creating a subset of the result to become the CardOccurance.occ attribute
+            tuple_not_in_occ = (&#39;title&#39;, &#39;date&#39;, &#39;price&#39;, &#39;tix&#39;, &#39;event_&#39;, &#39;format&#39;, &#39;echo_id&#39;, &#39;rowid&#39;);
+            occ = {k: p[k] for k in p.keys() if k not in tuple_not_in_occ}
+
+            plays.append(CardOccurance(card, event, occ=occ))
+
+        return plays
+
+    def getCardSeriesDataFrame(self, card, format=None):
+        &#34;&#34;&#34; Returns a pandas dataframe of card plays by card&#34;&#34;&#34;
+        cursor = self.cnx.cursor(dictionary=True)
+
+        if format != None:
+            query = (&#34;SELECT * FROM `card_series` WHERE `echo_id` = &#39;&#34;+str(card.echo_id)+&#34;&#39; AND `format`=&#39;&#34;+format+&#34;&#39; ORDER BY `date` DESC&#34;)
+        else:
+            query = (&#34;SELECT * FROM `card_series` WHERE `title` = &#39;&#34;+card.title+&#34;&#39; ORDER BY `date` DESC&#34;)
+
+        cursor.execute(query)
+
+        return pd.DataFrame(cursor.fetchall())
+
+    def getPriceSeriesDataFrame(self, card):
+        &#34;&#34;&#34; Returns a pandas dataframe of prices by card&#34;&#34;&#34;
+        cursor = self.cnx.cursor(dictionary=True)
+
+        query = (&#34;SELECT * FROM `price_series` WHERE `title` = &#39;&#34;+card.title+&#34;&#39; ORDER BY `date` ASC&#34;)
+
+        cursor.execute(query)
+
+        return pd.DataFrame(cursor.fetchall())
+
+    def getTournamentSeriesDataFrame(self, format=None):
+        &#34;&#34;&#34; Returns a pandas dataframe of all events based on MTG event format&#34;&#34;&#34;
+        cursor = self.cnx.cursor(dictionary=True)
+
+        if format != None:
+            query = (&#34;SELECT * FROM `tournaments` WHERE `format`=&#39;&#34;+format+&#34;&#39; ORDER BY `date` DESC&#34;)
+        else:
+            query = (&#34;SELECT * FROM `tournaments` WHERE 1 ORDER BY `date` DESC&#34;)
+
+        cursor.execute(query)
+
+        return pd.DataFrame(cursor.fetchall())
+
+    def eventCollected(self, event):
+        &#34;&#34;&#34;Checks if event has been collected&#34;&#34;&#34;
+        cursor = self.cnx.cursor()
+
+
+        query = (&#34;SELECT COUNT(1) FROM `tournaments` WHERE `id` = &#34;+str(event.id))
+        cursor.execute(query)
+
+        if cursor.fetchone()[0] == 0:
+            return False
+        return True
+
+    def allPlaysRecorded(self, card):
+        &#34;&#34;&#34; Returns boolean if all plays for a card have been recorded into the database&#34;&#34;&#34;
+        play_count_query = (&#39;SELECT COUNT(*) FROM `card_series` WHERE `title` =  &#34;&#39;+card.title+&#39;&#34;&#39;)
+        event_count_query = (&#39;SELECT COUNT(*) FROM `tournaments` WHERE `date` &gt;= &#34;&#39;+datetime.datetime.strftime(card.release_date, &#39;%Y-%m-%d&#39;) +&#39;&#34;&#39;)
+
+        cursor = self.cnx.cursor()
+        cursor.execute(play_count_query)
+        play_count = cursor.fetchone()[0]
+
+        cursor = self.cnx.cursor()
+        cursor.execute(event_count_query)
+        event_count = cursor.fetchone()[0]
+
+        if(play_count&gt;event_count):
+            print(&#34;WARNING play count &gt; event_count!!!!&#34;)
+        return(play_count &gt;= event_count)
+
+    def getLastCardPriceByCard(self, card):
+        &#34;&#34;&#34; Returns last price collected for card&#34;&#34;&#34;
+        query = (&#39;SELECT max(`date`) FROM `price_series` WHERE `title` = &#34;&#39;+card.title+&#39;&#34;&#39;)
+        cursor = self.cnx.cursor()
+        cursor.execute(query)
+        result = cursor.fetchone()[0]
+        return result if result != None else None
+
+    def searchCards(self, string):
+
+        query = (&#39;SELECT * FROM `cards` WHERE `title` LIKE &#34;%&#39;+string+&#39;%&#34;&#39;)
+        cursor = self.cnx.cursor()
+        cursor.execute(query)
+        cards =[]
+        for row in cursor.fetchall():
+            cards.append(Card(title=row[0],set = row[1], echo_id = row[5], rarity=row[4], release_date=row[2], rotation_date=row[3]))
+        return cards
+
+    def searchDate(self, string):
+        cursor = self.cnx.cursor(dictionary=True)
+        query = (&#34;SELECT * FROM `card_series` WHERE `date` = &#39;&#34;+string+&#34;&#39; ORDER BY `date` DESC&#34;)
+        cursor.execute(query)
+
+        plays = []
+        for p in cursor.fetchall():
+            # Building the the Objects that CardOccurance wraps around
+            event = Event(event_url=p[&#39;event_&#39;], format=p[&#39;format&#39;], date=p[&#39;date&#39;])
+
+            #Creating a subset of the result to become the CardOccurance.occ attribute
+            tuple_not_in_occ = (&#39;title&#39;, &#39;date&#39;, &#39;price&#39;, &#39;tix&#39;, &#39;event_&#39;, &#39;format&#39;, &#39;echo_id&#39;, &#39;rowid&#39;);
+            occ = {k: p[k] for k in p.keys() if k not in tuple_not_in_occ}
+
+            #TODO append occurance
+
+        return plays
+
+class Event:
+    &#34;&#34;&#34;Event Datatype
+
+    Event class is used to represent one event from MTG Goldfish. The Events class acts as a model for one row in a MySQL database.
+
+    Attributes:
+        event_url: A string of format &#34;/tournament/&lt;int number&gt;&#34;. This is a relative url on www.mtggoldfish.com.
+        decks: An array if deck id&#39;s from mtggoldfish.com. Represntative of the decks that placed in the event.
+        date: A date object at the day the event occured.
+        id: An int pulled from event_url as a unique id for the event.
+        format: A str representation of format. &#39;standard&#39;,&#39;pioneer&#39;,&#39;modern&#39;
+    &#34;&#34;&#34;
+
+    def __init__(self, event_url, decks=[], id=-1, date=&#34;&#34;, format=None):
+        &#34;&#34;&#34;Inits Event with an event url&#34;&#34;&#34;
+        self.event_url = event_url
+        self.decks = decks
+        self.date = date
+        self.id = id
+        self.format = format
+        if id==-1 and event_url:
+            self.id = int(event_url.split(&#39;/&#39;)[-1])
+
+    def __str__(self):
+        &#34;&#34;&#34;Converts to printable string&#34;&#34;&#34;
+        #return self.event_url +&#34; : &#34;+ datetime.strftime(self.date, &#34;%Y-%m-%d&#34;)
+        return self.event_url +&#34; : &#34;+ datetime.strftime(self.date, &#34;%Y-%m-%d&#34;)
+
+    def __eq__(self, o):
+        &#34;&#34;&#34;Overides == operator : compares based on Event.id&#34;&#34;&#34;
+        return isinstance(o, Event) and self.id == o.id
+
+    def __repr__(self):
+        object = {
+            &#34;id&#34;:self.id,
+            &#34;event_url&#34; :self.event_url,
+            &#34;format&#34;: self.format,
+            &#34;date&#34;: datetime.strftime(self.date, &#34;%Y-%m-%d&#34;),
+            &#34;decks&#34;: self.decks,
+        }
+        return (&#34;(%s)&#34; % ( object[&#39;id&#39;]))
+
+    def getEventURL(self):
+        &#34;&#34;&#34;Deprecated: Getter for event_url&#34;&#34;&#34;
+        return self.event_url
+
+    def getDecks(self):
+        &#34;&#34;&#34;Deprecated: Getter for decks&#34;&#34;&#34;
+        return self.decks
+
+    def isEmpty(self):
+        &#34;&#34;&#34;Returns Status of empty&#34;&#34;&#34;
+        return len(self.decks) == 0;
+
+    def getDate(self):
+        &#34;&#34;&#34;Gives string representation of date&#34;&#34;&#34;
+        return datetime.strptime(self.date, &#34;%Y-%m-%d&#34;).date()
+        #return self.date
+
+    def setDecks(self, decks):
+        &#34;&#34;&#34;Deprecated: Setter of decks&#34;&#34;&#34;
+        self.decks = decks
+
+    def addDeck(self, deck):
+        &#34;&#34;&#34;Adds deck to decks&#34;&#34;&#34;
+        self.decks.append(deck);
+        return deck
+
+    def getID(self):
+        &#34;&#34;&#34;Deprecated: Getter of id&#34;&#34;&#34;
+        return self.id
+
+    def setOcc(self, occ):
+        &#34;&#34;&#34;Deprecated: setter of occ&#34;&#34;&#34;
+        self.occ = occ
+
+    def getOcc(self):
+        &#34;&#34;&#34;Deprecated: getter of occ&#34;&#34;&#34;
+        return self.occ
+
+    def setCardOccurances(self, cards):
+        &#34;&#34;&#34;Deprecated: setter of occurance objects&#34;&#34;&#34;
+        self.card_occurances = cards
+
+    def addCardOccurance(self, card_occurance):
+        &#34;&#34;&#34;Deprecated: adds one occurance to occurance objects&#34;&#34;&#34;
+        if(card_occurance not in self.card_occurances):
+            self.card_occurances.append(card_occurance)
+            return True
+        return False
+
+    def getCardOccurances(self):
+        &#34;&#34;&#34;Deprecated: getter of card_occurances&#34;&#34;&#34;
+        return self.card_occurances</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="mtgather.models.daterange"><code class="name flex">
+<span>def <span class="ident">daterange</span></span>(<span>first, last)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def daterange(first, last):
+    dates = []
+    for n in range(int ((last - first).days)+1):
+        dates.append(first + timedelta(n))
+    return dates</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="mtgather.models.Card"><code class="flex name class">
+<span>class <span class="ident">Card</span></span>
+<span>(</span><span>id=-1, title='', occ=Empty DataFrame
+Columns: [card, date, date_unix, raw, event, deck_nums, 1st Place, 2nd Place, 3rd Place, 4th Place, 5th Place, 6th Place, 7th Place, 8th Place, 9th Place, 10th Place, 11th Place, 12th Place, 13th Place, 14th Place, 15th Place, 16th Place, (9-0), (8-0), (7-0), (6-0), (5-0), (6-1), (5-2), (8-1), (7-2), (7-1), (6-2)]
+Index: [], price=Empty DataFrame
+Columns: [date, price]
+Index: [], tix=Empty DataFrame
+Columns: [date, price]
+Index: [], set=None, echo_id=-1, rarity=None, release_date=None, rotation_date=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Card Datatype</p>
+<p>The Card Class is used to represent one card in MTG. The class is also used as a Database model for one card.
+This card does not represent any particular moment in time. A card class, should represent the full extend of the card's life
+in the MTG Game given.</p>
+<p>This Card Class is chock full of deprecated methods and attributes. Documentation is on hold for this class
+because it needs to be completely overhauled.</p>
+<p>Deprecated Attributes are not incuded in Documentation.</p>
+<h2 id="attributes">Attributes</h2>
+<dl>
+<dt><strong><code>title</code></strong></dt>
+<dd>A string of title of the card.</dd>
+<dt><strong><code>price</code></strong></dt>
+<dd>A Pandas Dataframe of the paper pricing history.</dd>
+<dt><strong><code>tix</code></strong></dt>
+<dd>A Pandas Dataframe of the MTGO pricing history</dd>
+<dt><strong><code>set</code></strong></dt>
+<dd>A string of the URL of the set.</dd>
+<dt><strong><code>echo_id</code></strong></dt>
+<dd>An int of the echomtg unique identifier.</dd>
+<dt><strong><code>rarity</code></strong></dt>
+<dd>A string of the rarity of the card "rare", "mythic", "uncommon", &hellip;</dd>
+<dt><strong><code>release_date</code></strong></dt>
+<dd>A datetime object of the release date of the card. <em>Note:</em> Not the prerelease date. Same value as set release date.</dd>
+</dl>
+<p>Init of a card object.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Card:
+    &#34;&#34;&#34;Card Datatype
+
+    The Card Class is used to represent one card in MTG. The class is also used as a Database model for one card.
+    This card does not represent any particular moment in time. A card class, should represent the full extend of the card&#39;s life
+    in the MTG Game given.
+
+    This Card Class is chock full of deprecated methods and attributes. Documentation is on hold for this class
+    because it needs to be completely overhauled.
+
+    Deprecated Attributes are not incuded in Documentation.
+
+    Attributes:
+        title: A string of title of the card.
+        price: A Pandas Dataframe of the paper pricing history.
+        tix: A Pandas Dataframe of the MTGO pricing history
+        set: A string of the URL of the set.
+        echo_id: An int of the echomtg unique identifier.
+        rarity: A string of the rarity of the card &#34;rare&#34;, &#34;mythic&#34;, &#34;uncommon&#34;, ...
+        release_date: A datetime object of the release date of the card. *Note:* Not the prerelease date. Same value as set release date.
+    &#34;&#34;&#34;
+    price_data_columns =[&#34;date_unix&#34;, &#34;datetime&#34;, &#34;price_dollars&#34;]
+    occ_data_columns = [
+        &#39;card&#39;,
+        &#39;date&#39;,
+        &#39;date_unix&#39;,
+        &#39;raw&#39;,
+        &#39;event&#39;,
+        &#39;deck_nums&#39;,
+        &#39;1st Place&#39;,
+        &#39;2nd Place&#39;,
+        &#39;3rd Place&#39;,
+        &#39;4th Place&#39;,
+        &#39;5th Place&#39;,
+        &#39;6th Place&#39;,
+        &#39;7th Place&#39;,
+        &#39;8th Place&#39;,
+        &#39;9th Place&#39;,
+        &#39;10th Place&#39;,
+        &#39;11th Place&#39;,
+        &#39;12th Place&#39;,
+        &#39;13th Place&#39;,
+        &#39;14th Place&#39;,
+        &#39;15th Place&#39;,
+        &#39;16th Place&#39;,
+        &#39;(9-0)&#39;,
+        &#39;(8-0)&#39;,
+        &#39;(7-0)&#39;,
+        &#39;(6-0)&#39;,
+        &#39;(5-0)&#39;,
+        &#39;(6-1)&#39;,
+        &#39;(5-2)&#39;,
+        &#39;(8-1)&#39;,
+        &#39;(7-2)&#39;,
+        &#39;(7-1)&#39;,
+        &#39;(6-2)&#39;]
+
+    def __init__(self, id=-1, title=&#34;&#34;, occ = pd.DataFrame(columns=occ_data_columns), price=pd.DataFrame(columns=[&#39;date&#39;,&#39;price&#39;]),tix=pd.DataFrame(columns=[&#39;date&#39;,&#39;price&#39;]),
+                set=None,echo_id=-1,rarity=None, release_date = None, rotation_date=None):
+
+        &#34;&#34;&#34;Init of a card object.&#34;&#34;&#34;
+        assert isinstance(occ, pd.DataFrame), &#34;non dataframe passed through occ&#34;
+        assert isinstance(price, pd.DataFrame), &#34;non dataframe passed through price&#34;
+        self.id = id
+        self.title = title
+        self.release_date = release_date
+        self.rotation_date = rotation_date
+        self.occ = occ
+        self.price = price
+        self.tix = tix
+        self.set = set
+        self.echo_id = echo_id
+        self.rarity = rarity
+
+    def __repr__(self):
+        object = {
+            &#39;id&#39;: self.echo_id,
+            &#39;title&#39;: self.title,
+            &#39;release_date&#39;: datetime.strftime(self.release_date, &#34;%Y-%m-%d&#34;) if self.release_date!=None else None,
+            &#39;rotation_date&#39;: datetime.strftime(self.rotation_date, &#34;%Y-%m-%d&#34;) if self.rotation_date!=None else None,
+            &#39;set&#39;: self.set,
+            &#39;rarity&#39;:self.rarity
+        }
+        return (&#34;(%s, %s)&#34; % (object[&#39;title&#39;], object[&#39;id&#39;]))
+
+    def __eq__(self, o):
+        &#34;&#34;&#34; Returns True or False based on echo_id&#34;&#34;&#34;
+        return isinstance(o, Card) and o.echo_id == self.echo_id
+
+    def __str__(self):
+        &#34;&#34;&#34; Returns readable string of card.
+        Important for logging and such.&#34;&#34;&#34;
+        return str(self.echo_id) + &#34;-&#34; + str(self.title)
+
+    def isEmpty(self):
+        &#34;&#34;&#34; Deprecated from other versions&#34;&#34;&#34;
+        #TODO
+        return False;
+
+    def dateparse(time_unix):
+        &#34;&#34;&#34; Converts unix timestamp into string&#34;&#34;&#34;
+        return datetime.utcfromtimestamp(int(time_unix)/1000).strftime(&#39;%Y-%m-%d %H:%M:%S&#39;)
+
+    def CardPrices(self, start=None, end=None):
+        &#34;&#34;&#34; Returns an of array of CardPrice objects from the start and end dates.
+
+        Args:
+            start: a datetime indicating the start of desired CardPrice retrieval.
+            end: a datetime indication the end of desired CardPrice retrieval
+        &#34;&#34;&#34;
+        if start == None:
+            start = card.release_date
+        if end == None:
+            end=date.today()
+
+        prices = []
+        for day in daterange(start, end):
+            try:
+                prices.append(CardPrice(self, day))
+            except DatePricingError as e:
+                print(&#34;No Price info on day &#34;, day)
+        return prices</code></pre>
+</details>
+<h3>Class variables</h3>
+<dl>
+<dt id="mtgather.models.Card.occ_data_columns"><code class="name">var <span class="ident">occ_data_columns</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="mtgather.models.Card.price_data_columns"><code class="name">var <span class="ident">price_data_columns</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="mtgather.models.Card.CardPrices"><code class="name flex">
+<span>def <span class="ident">CardPrices</span></span>(<span>self, start=None, end=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns an of array of CardPrice objects from the start and end dates.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>start</code></strong></dt>
+<dd>a datetime indicating the start of desired CardPrice retrieval.</dd>
+<dt><strong><code>end</code></strong></dt>
+<dd>a datetime indication the end of desired CardPrice retrieval</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def CardPrices(self, start=None, end=None):
+    &#34;&#34;&#34; Returns an of array of CardPrice objects from the start and end dates.
+
+    Args:
+        start: a datetime indicating the start of desired CardPrice retrieval.
+        end: a datetime indication the end of desired CardPrice retrieval
+    &#34;&#34;&#34;
+    if start == None:
+        start = card.release_date
+    if end == None:
+        end=date.today()
+
+    prices = []
+    for day in daterange(start, end):
+        try:
+            prices.append(CardPrice(self, day))
+        except DatePricingError as e:
+            print(&#34;No Price info on day &#34;, day)
+    return prices</code></pre>
+</details>
+</dd>
+<dt id="mtgather.models.Card.dateparse"><code class="name flex">
+<span>def <span class="ident">dateparse</span></span>(<span>time_unix)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Converts unix timestamp into string</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def dateparse(time_unix):
+    &#34;&#34;&#34; Converts unix timestamp into string&#34;&#34;&#34;
+    return datetime.utcfromtimestamp(int(time_unix)/1000).strftime(&#39;%Y-%m-%d %H:%M:%S&#39;)</code></pre>
+</details>
+</dd>
+<dt id="mtgather.models.Card.isEmpty"><code class="name flex">
+<span>def <span class="ident">isEmpty</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Deprecated from other versions</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def isEmpty(self):
+    &#34;&#34;&#34; Deprecated from other versions&#34;&#34;&#34;
+    #TODO
+    return False;</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="mtgather.models.CardOccurance"><code class="flex name class">
+<span>class <span class="ident">CardOccurance</span></span>
+<span>(</span><span>card, event, occ, date=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>CardOccurance Datatype</p>
+<p>Sometimes the name 'play' is used as a synonym for CardOccurance.</p>
+<p>The CardOccurance datatype is used as a wrapper class of the Card datatype.
+CardOccurance holds a card as well as a date which the occurance takes place.
+Unlike Card, CardOccurance's price and tix attribute is a float, instead of a dataframe.
+This is because the price of a CardOccurance coorelates to the price of the
+associated card at the date it was played.</p>
+<h2 id="attributes">Attributes</h2>
+<dl>
+<dt><strong><code>card</code></strong></dt>
+<dd>As Card object representing the associated card of the card Occurance.</dd>
+<dt><strong><code>event</code></strong></dt>
+<dd>An Event object representing the Event the card was played in.</dd>
+<dt><strong><code>occ</code></strong></dt>
+<dd>A JSON object (Python Dictionary) of the occurance data.</dd>
+<dt><strong><code>date</code></strong></dt>
+<dd>A datetime object of the play date.</dd>
+<dt><strong><code>format</code></strong></dt>
+<dd>A string of the format of the event the card appeared in. 'pioneer', 'standard', 'modern', etc</dd>
+<dt><strong><code>id</code></strong></dt>
+<dd>A string as a unique row identifier for a MySQL database of form '<card.echo_id>:<event.id>:<date>'</dd>
+<dt><strong><code>price</code></strong></dt>
+<dd>A float of the paper cost of the card the day of the event.</dd>
+</dl>
+<p>tix. A float of the MTGO cost of the card the day of the event.
+Initialization of the Card with Card, Event, and occ data mandatory</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class CardOccurance:
+    &#34;&#34;&#34;CardOccurance Datatype
+
+    Sometimes the name &#39;play&#39; is used as a synonym for CardOccurance.
+
+    The CardOccurance datatype is used as a wrapper class of the Card datatype.
+    CardOccurance holds a card as well as a date which the occurance takes place.
+    Unlike Card, CardOccurance&#39;s price and tix attribute is a float, instead of a dataframe.
+    This is because the price of a CardOccurance coorelates to the price of the
+    associated card at the date it was played.
+
+    Attributes:
+        card: As Card object representing the associated card of the card Occurance.
+        event: An Event object representing the Event the card was played in.
+        occ: A JSON object (Python Dictionary) of the occurance data.
+        date: A datetime object of the play date.
+        format: A string of the format of the event the card appeared in. &#39;pioneer&#39;, &#39;standard&#39;, &#39;modern&#39;, etc
+        id: A string as a unique row identifier for a MySQL database of form &#39;&lt;card.echo_id&gt;:&lt;event.id&gt;:&lt;date&gt;&#39;
+        price: A float of the paper cost of the card the day of the event.
+        tix. A float of the MTGO cost of the card the day of the event.
+    &#34;&#34;&#34;
+    def __init__(self, card, event, occ, date=None):
+        &#34;&#34;&#34;Initialization of the Card with Card, Event, and occ data mandatory&#34;&#34;&#34;
+        self.card = card
+        self.event = event
+        self.format = event.format
+        self.occ = occ
+        if not date==None:
+            self.date = date
+        else:
+            self.date = event.date
+        self.id = str(card.echo_id)+ &#34;:&#34; + str(event.id)+ &#34;:&#34; + str(self.date)
+
+
+    def __repr__(self):
+        &#34;&#34;&#34; Provides a json based represenation of the CardOccurance object &#34;&#34;&#34;
+
+        object = {
+            &#34;event&#34;: self.event.__repr__(),
+            &#34;occ&#34;: self.occ
+        }
+        return object
+
+    def __eq__(self, o):
+        &#34;&#34;&#34;Overrides the == operator to establish equality based on the card and the event&#34;&#34;&#34;
+        isinstance(o, CardOccurance) and self.card == o.card and self.event == o.event</code></pre>
+</details>
+</dd>
+<dt id="mtgather.models.CardPrice"><code class="flex name class">
+<span>class <span class="ident">CardPrice</span></span>
+<span>(</span><span>card, date, price=None, tix=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>CardPrice Datatype</p>
+<p>The CardPrice datatype is used as a wrapper class of the Card datatype.
+CardPrice holds a card as well as a date for when the card was at that price.
+Unlike Card, CardPrice's price and tix attribute is a float, instead of a dataframe.
+This is because the price of a CardPrice's price
+coorelates to the price of the
+associated card at the date it was played.</p>
+<h2 id="attributes">Attributes</h2>
+<dl>
+<dt><strong><code>card</code></strong></dt>
+<dd>As Card object representing the associated card of the card Occurance.</dd>
+<dt><strong><code>date</code></strong></dt>
+<dd>A datetime object of the play date.</dd>
+<dt><strong><code>id</code></strong></dt>
+<dd>A string as a unique row identifier for a MySQL database of form '<card.echo_id>:<date>'</dd>
+<dt><strong><code>price</code></strong></dt>
+<dd>A float of the paper cost of the card the day of the event.</dd>
+</dl>
+<p>tix. A float of the MTGO cost of the card the day of the event.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class CardPrice:
+
+    &#34;&#34;&#34;CardPrice Datatype
+
+    The CardPrice datatype is used as a wrapper class of the Card datatype.
+    CardPrice holds a card as well as a date for when the card was at that price.
+    Unlike Card, CardPrice&#39;s price and tix attribute is a float, instead of a dataframe.
+    This is because the price of a CardPrice&#39;s price  coorelates to the price of the
+    associated card at the date it was played.
+
+    Attributes:
+        card: As Card object representing the associated card of the card Occurance.
+        date: A datetime object of the play date.
+        id: A string as a unique row identifier for a MySQL database of form &#39;&lt;card.echo_id&gt;:&lt;date&gt;&#39;
+        price: A float of the paper cost of the card the day of the event.
+        tix. A float of the MTGO cost of the card the day of the event.
+    &#34;&#34;&#34;
+    def __init__(self, card, date, price=None, tix=None):
+        self.card = card
+        self.date = date
+        if price==None:
+            try:
+                self.price = self.card.price.loc[self.date][&#39;price&#39;]
+            except KeyError as e:
+                print(e)
+                print(&#34;Price at date : &#34;, self.date, &#34; unavailable.&#34;)
+                self.price=None
+
+        if tix ==None:
+            try:
+                self.tix = self.card.tix.loc[self.date][&#39;price&#39;]
+            except KeyError as e:
+                print(e)
+                print(&#34;tix at date : &#34;, self.date, &#34; unavailable.&#34;)
+                self.tix=None
+
+        if self.price==None and self.tix==None:
+            print(date)
+            raise DatePricingError(&#34;No Pricing History&#34;)</code></pre>
+</details>
+</dd>
+<dt id="mtgather.models.Database"><code class="flex name class">
+<span>class <span class="ident">Database</span></span>
+<span>(</span><span>path='../config.json')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>A Class for the Database object</p>
+<p>Database is used as an object which interacts with a MySQL database. Check GITHUB page for schema details on MySQL database.</p>
+<h2 id="attributes">Attributes</h2>
+<dl>
+<dt><strong><code>config</code></strong></dt>
+<dd>path to file containing database connection information</dd>
+<dt><strong><code>cnx</code></strong></dt>
+<dd>a mysql-connector connection.</dd>
+</dl>
+<p>Inits Database with specified config file. On reading of config</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>path</code></strong></dt>
+<dd>a string '/path/to/config.json'</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Database:
+    &#34;&#34;&#34;A Class for the Database object
+
+    Database is used as an object which interacts with a MySQL database. Check GITHUB page for schema details on MySQL database.
+
+    Attributes:
+        config: path to file containing database connection information
+        cnx: a mysql-connector connection.
+
+    &#34;&#34;&#34;
+    def __init__(self, path = &#39;../config.json&#39;):
+        &#34;&#34;&#34;Inits Database with specified config file. On reading of config
+
+        Args:
+            path: a string &#39;/path/to/config.json&#39;
+
+        &#34;&#34;&#34;
+        try:
+            with open(path, &#39;r&#39;) as json_file:
+                text = json_file.read()
+                json_data = json.loads(text)
+                self.config = json_data
+            self.cnx = mysql.connector.connect(user=self.config[&#34;database&#34;][&#34;user&#34;], password=self.config[&#34;database&#34;][&#34;password&#34;],
+                                          host=self.config[&#34;database&#34;][&#34;host&#34;],
+                                          database= (self.config[&#34;database&#34;][&#34;dev_database_name&#34;] if self.config[&#34;dev&#34;]==&#34;True&#34; else self.config[&#34;database&#34;][&#34;database_name&#34;]))
+
+        except Exception as e:
+            # TODO: throw custom exception for error on initial
+            print(e)
+            self.cnx = None
+            self.config = None
+
+    def __del__(self):
+        &#34;&#34;&#34;Closes cnx connection&#34;&#34;&#34;
+        self.cnx.close()
+
+    def isConnected(self):
+        &#34;&#34;&#34;Returns if connection is connected&#34;&#34;&#34;
+        if(self.cnx != None):
+            return True
+        else:
+            return False
+
+    def addCard(self, card):
+        # TODO: upload release date too
+        &#34;&#34;&#34;Adds Card Model to Database.
+
+        Args:
+            card: A Card object which contains title, set, echo_id, and release_date.
+
+        &#34;&#34;&#34;
+        cursor = self.cnx.cursor()
+        insert_card = (&#34;INSERT INTO cards&#34;
+                        &#34;&#34;&#34;(title,set_mtg, echo_id, rarity)&#34;&#34;&#34;
+                        &#34;VALUES (%s, %s, %s, %s)&#34;)
+        insert_card_data = (card.title, card.set, card.echo_id, card.rarity)
+        try:
+            cursor.execute(insert_card, insert_card_data)
+            self.cnx.commit()
+        except Exception as err:
+            print(err)
+            return False
+        id = cursor.lastrowid
+        return id
+
+    def addCards(self, cards):
+        &#34;&#34;&#34;Adds list of Cards to database using addCard()
+
+        Args:
+            cards: an array of cards.
+        &#34;&#34;&#34;
+        for card in cards:
+            self.addCard(card)
+            print(str(card.echo_id) + &#34; - &#34; + card.title)
+
+    def getCards(self, from_date= date(2017, 9, 28)):
+        &#34;&#34;&#34;Retrieves all cards in the Cards table.
+
+        Returns:
+            Array of Card objects.
+        &#34;&#34;&#34;
+        cursor = self.cnx.cursor()
+        query = (&#34;SELECT * FROM `cards` &#34;
+                &#34; WHERE rotation_date is NULL OR rotation_date &gt;= %s &#34;)
+        vals = (from_date,)
+        cursor.execute(query,vals)
+        cards = []
+        for row in cursor.fetchall():
+            cards.append(Card(title=row[0],set = row[1], echo_id = row[5], rarity=row[4], release_date=row[2], rotation_date=row[3]))
+        return cards
+
+    def getCardByTitle(self, title, date=date.today()):
+        # RESOLVE: What happens when there is no card by this name?
+        &#34;&#34;&#34;Retrieves one card from the database by title.
+
+        Retrieves a card from the cards table. If multiple cards are queried (IE two of the same card from different
+        sets) then the date arg is used to reconcile which age of card is required. The most recent version available
+        is always returned.
+
+        For example:
+            Sorcerous Spyglass returns two cards, one from Ixilan and Eldrain. By passing in a date (date of event) we can further
+            filter our results. If the event occured before the release of Eldrain then the Ixilan version is return.
+
+        Args:
+            title: a string of the title of the desired card.
+            date: a datetime object to resolve multiple cards of the same name.
+
+        Returns:
+            A Card object.
+        &#34;&#34;&#34;
+        cursor = self.cnx.cursor()
+        query = (&#34;SELECT * FROM `cards` WHERE `title` = %s AND `release_date` &lt;= %s ORDER BY `release_date` DESC&#34;)
+        values = (title, date)
+        try:
+            cursor.execute(query, values)
+        except Exception as err:
+            print(err)
+            return False
+
+        try:
+            data = cursor.fetchall()[0]
+        except IndexError:
+            return False
+
+        return Card(title=data[0], set=data[1], echo_id=data[5], rarity=data[4], release_date=data[2])
+
+    def getCardByID(self, id, date=date.today()):
+        &#34;&#34;&#34;Retrieves one card from the database by ECHO ID.
+
+        Retrieves a card from the cards table. If multiple cards are queried (IE two of the same card from different
+        sets) then the date arg is used to reconcile which age of card is required. The most recent version available
+        is always returned.
+
+        For example:
+            Sorcerous Spyglass returns two cards, one from Ixilan and Eldrain. By passing in a date (date of event) we can further
+            filter our results. If the event occured before the release of Eldrain then the Ixilan version is return.
+
+        Args:
+            title: a string of the title of the desired card.
+            date: a datetime object to resolve multiple cards of the same name.
+
+        Returns:
+            A Card object.
+        &#34;&#34;&#34;
+        cursor = self.cnx.cursor()
+        query = (&#34;SELECT * FROM `cards` WHERE `echo_id` = %s AND `release_date` &lt;= %s ORDER BY `release_date` DESC&#34;)
+        values = (id, date)
+        try:
+            cursor.execute(query, values)
+        except Exception as err:
+            print(err)
+            return False
+
+        try:
+            data = cursor.fetchall()[0]
+        except IndexError:
+            return False
+
+        return Card(title=data[0], set=data[1], echo_id=data[5], rarity=data[4], release_date=data[2])
+
+    def addEvent(self, event):
+        &#34;&#34;&#34;Adds Event object to database
+
+        Args:
+            event: An Event object
+
+        Returns: A boolean, True if successful addition, False if failed.
+        &#34;&#34;&#34;
+        cursor = self.cnx.cursor()
+        insert_tournament = (&#34;INSERT INTO tournaments&#34;
+                            &#34;&#34;&#34;(date, url, format, id)&#34;&#34;&#34;
+                            &#34;VALUES (%s, %s, %s, %s)&#34;)
+        insert_values = (event.date, event.event_url, event.format, event.id)
+        try:
+            cursor.execute(insert_tournament, insert_values)
+            self.cnx.commit()
+        except Exception as err:
+            print(err)
+            return False
+        return True
+
+    def addEvents(self, events):
+        &#34;&#34;&#34;Adds list of Event objects using addEvent()&#34;&#34;&#34;
+        for event in events:
+            self.addEvent(event)
+        return True
+
+    def getLastTimelineDate(self):
+        &#34;&#34;&#34;Deprecated: Retrieves the date of the occurance collected
+
+        This method is useful for when there is weekly/daily collection so a script can pickup where it left off.
+
+        Returns:
+            A datetime date object.
+        &#34;&#34;&#34;
+        cursor = self.cnx.cursor()
+        query = (&#34;&#34;&#34;SELECT MAX(date) FROM `card_series`;&#34;&#34;&#34;)
+        try:
+            cursor.execute(query)
+        except Exception as err:
+            print(err)
+            return False
+
+        for row in cursor.fetchall():
+            if row[0]==None:
+                return False
+            return row[0]
+        return False
+
+    def getLastEventDate(self, format=None):
+        &#34;&#34;&#34;Retrieves the date of the event collected
+
+        This method is useful for when there is weekly/daily collection so a script can pickup where it left off.
+
+        Returns:
+            A datetime date object.
+        &#34;&#34;&#34;
+        cursor = self.cnx.cursor()
+        query = (&#34;&#34;&#34;SELECT MAX(date) FROM `tournaments`;&#34;&#34;&#34;)
+        if format!= None:
+            query = (&#34;SELECT MAX(date) FROM `tournaments` WHERE `format` = &#39;&#34;+format+&#34;&#39;;&#34;)
+        try:
+            cursor.execute(query)
+        except Exception as err:
+            print(err)
+            return False
+
+        for row in cursor.fetchall():
+            if row[0]==None:
+                return False
+            return row[0]
+        return False
+
+    def addCardOccurance(self, play):
+        &#34;&#34;&#34;Adds a CardOccurance Object to the Database
+
+        Args:
+            play: A CardOccurance object
+        &#34;&#34;&#34;
+        assert isinstance(play, CardOccurance), &#34;Expected instance of CardOccurance, got &#34; + str(play)
+
+        cursor = self.cnx.cursor()
+        insert = (&#34;INSERT INTO card_series&#34;
+                        &#34;&#34;&#34;(rowid, title,date,tot_occ,event_,format,deck_nums,
+                        first_place,secon_place,third_place,fourt_place,
+                        fifth_place,sixth_place,seven_place,eigth_place,
+                        ninet_place,tenth_place,twelt_place,thtee_place,
+                        fotee_place,fitee_place,sitee_place,nineo,eighto,
+                        seveno,sixo,fiveo,sixone,fivetwo,eightone,seventwo,
+                        sevenone,sixtwo,echo_id)&#34;&#34;&#34;
+                        &#34;VALUES (%s, %s, %s, %s, %s, %s, %s, %s,%s,%s, %s, %s, %s,%s, %s, %s, %s,%s, %s, %s, %s,%s, %s, %s, %s,%s, %s, %s, %s,%s, %s, %s, %s,%s)&#34;)
+
+        occ = {
+            &#39;raw&#39;:0,
+            &#39;1st Place&#39;:0,
+            &#39;2nd Place&#39;:0,
+            &#39;3rd Place&#39;:0,
+            &#39;4th Place&#39;:0,
+            &#39;5th Place&#39;:0,
+            &#39;6th Place&#39;:0,
+            &#39;7th Place&#39;:0,
+            &#39;8th Place&#39;:0,
+            &#39;9th Place&#39;:0,
+            &#39;10th Place&#39;:0,
+            &#39;11th Place&#39;:0,
+            &#39;12th Place&#39;:0,
+            &#39;13th Place&#39;:0,
+            &#39;14th Place&#39;:0,
+            &#39;15th Place&#39;:0,
+            &#39;16th Place&#39;:0,
+            &#39;(9-0)&#39;: 0,
+            &#39;(8-0)&#39;: 0,
+            &#39;(7-0)&#39;: 0,
+            &#39;(6-0)&#39;: 0,
+            &#39;(5-0)&#39;: 0,
+            &#39;(6-1)&#39;: 0,
+            &#39;(5-2)&#39;: 0,
+            &#39;(8-1)&#39;: 0,
+            &#39;(7-2)&#39;: 0,
+            &#39;(7-1)&#39;: 0,
+            &#39;(6-2)&#39;: 0
+        }
+        data = play.occ
+        occ.update(data)
+        insert_data = (play.id, play.card.title, play.date, occ[&#39;raw&#39;], str(play.event.event_url),play.format, len(play.event.decks) , occ[&#39;1st Place&#39;],
+                                occ[&#39;2nd Place&#39;], occ[&#39;3rd Place&#39;], occ[&#39;5th Place&#39;], occ[&#39;6th Place&#39;], occ[&#39;7th Place&#39;], occ[&#39;8th Place&#39;],
+                                occ[&#39;9th Place&#39;], occ[&#39;10th Place&#39;], occ[&#39;11th Place&#39;], occ[&#39;12th Place&#39;], occ[&#39;13th Place&#39;], occ[&#39;14th Place&#39;],
+                                occ[&#39;15th Place&#39;], occ[&#39;16th Place&#39;],occ[&#39;(9-0)&#39;],occ[&#39;(8-0)&#39;],occ[&#39;(7-0)&#39;],occ[&#39;(6-0)&#39;],occ[&#39;(5-0)&#39;],
+                                occ[&#39;(6-1)&#39;],occ[&#39;(5-2)&#39;],occ[&#39;(8-1)&#39;],occ[&#39;(7-2)&#39;],occ[&#39;(7-1)&#39;],occ[&#39;(6-2)&#39;],play.card.echo_id)
+
+        try:
+            cursor.execute(insert, insert_data)
+        except IntegrityError as err:
+            print(err)
+            return False
+        self.cnx.commit()
+
+    def addCardPrice(self, cardprice):
+        &#34;&#34;&#34; Adds CardPrice object to the database.
+
+        Args:
+            cardprice: An instance of a CardPrice object to be serialized and added.
+
+        Returns:
+            A boolean describing success of database addition.
+        &#34;&#34;&#34;
+
+        assert isinstance(cardprice, CardPrice), &#34;Expected instance of CardPrice, got &#34; + str(play)
+
+        cursor = self.cnx.cursor()
+        insert = (&#34;INSERT INTO price_series&#34;
+                &#34;&#34;&#34;(date, title, price, tix, rowid, echo_id)&#34;&#34;&#34;
+                &#34;VALUES (%s, %s, %s, %s, %s, %s)&#34;)
+        rowid= str(cardprice.card.echo_id) + &#34;:&#34; + str(cardprice.date)
+        cpp = float(cardprice.price) if cardprice.price != None else None
+        cpt = float(cardprice.tix) if cardprice.tix != None else None
+        insert_data = (cardprice.date, cardprice.card.title, cpp, cpt, rowid, cardprice.card.echo_id)
+
+        try:
+            cursor.execute(insert, insert_data)
+        except IntegrityError as err:
+            print(err)
+            return False
+        self.cnx.commit()
+        return True
+
+    def addCardPrices(self, cardprices):
+        &#34;&#34;&#34; Adds and array of cardprices&#34;&#34;&#34;
+        for p in cardprices:
+            self.addCardPrice(p)
+
+    def getCardPriceByDate(self, card, date):
+        &#34;&#34;&#34; Retrieves a the price of a card at a specific date
+
+        Args:
+            card: Card object containing data about the desired card price.
+            date: datetime of the desired price.
+        &#34;&#34;&#34;
+
+        cursor = self.cnx.cursor(dictionary=True)
+        query = (&#34;SELECT * FROM `price_series` WHERE `title` = %s AND `date` = %s&#34;)
+        data = (card.title, date)
+        cursor.execute(query, data)
+        return cursor.fetchone()
+
+    def getOccurancesByCard(self, card):
+        &#34;&#34;&#34;Retrieves a list of CardOccurance in database based on card&#34;&#34;&#34;
+
+        cursor = self.cnx.cursor(dictionary=True)
+        query = (&#34;SELECT * FROM `card_series` WHERE `title` = &#39;&#34;+card.title+&#34;&#39; ORDER BY `date` DESC&#34;)
+        cursor.execute(query)
+
+        plays = []
+        for p in cursor.fetchall():
+            # Building the the Objects that CardOccurance wraps around
+            event = Event(event_url=p[&#39;event_&#39;], format=p[&#39;format&#39;], date=p[&#39;date&#39;])
+
+            #Creating a subset of the result to become the CardOccurance.occ attribute
+            tuple_not_in_occ = (&#39;title&#39;, &#39;date&#39;, &#39;price&#39;, &#39;tix&#39;, &#39;event_&#39;, &#39;format&#39;, &#39;echo_id&#39;, &#39;rowid&#39;);
+            occ = {k: p[k] for k in p.keys() if k not in tuple_not_in_occ}
+
+            plays.append(CardOccurance(card, event, occ=occ))
+
+        return plays
+
+    def getCardSeriesDataFrame(self, card, format=None):
+        &#34;&#34;&#34; Returns a pandas dataframe of card plays by card&#34;&#34;&#34;
+        cursor = self.cnx.cursor(dictionary=True)
+
+        if format != None:
+            query = (&#34;SELECT * FROM `card_series` WHERE `echo_id` = &#39;&#34;+str(card.echo_id)+&#34;&#39; AND `format`=&#39;&#34;+format+&#34;&#39; ORDER BY `date` DESC&#34;)
+        else:
+            query = (&#34;SELECT * FROM `card_series` WHERE `title` = &#39;&#34;+card.title+&#34;&#39; ORDER BY `date` DESC&#34;)
+
+        cursor.execute(query)
+
+        return pd.DataFrame(cursor.fetchall())
+
+    def getPriceSeriesDataFrame(self, card):
+        &#34;&#34;&#34; Returns a pandas dataframe of prices by card&#34;&#34;&#34;
+        cursor = self.cnx.cursor(dictionary=True)
+
+        query = (&#34;SELECT * FROM `price_series` WHERE `title` = &#39;&#34;+card.title+&#34;&#39; ORDER BY `date` ASC&#34;)
+
+        cursor.execute(query)
+
+        return pd.DataFrame(cursor.fetchall())
+
+    def getTournamentSeriesDataFrame(self, format=None):
+        &#34;&#34;&#34; Returns a pandas dataframe of all events based on MTG event format&#34;&#34;&#34;
+        cursor = self.cnx.cursor(dictionary=True)
+
+        if format != None:
+            query = (&#34;SELECT * FROM `tournaments` WHERE `format`=&#39;&#34;+format+&#34;&#39; ORDER BY `date` DESC&#34;)
+        else:
+            query = (&#34;SELECT * FROM `tournaments` WHERE 1 ORDER BY `date` DESC&#34;)
+
+        cursor.execute(query)
+
+        return pd.DataFrame(cursor.fetchall())
+
+    def eventCollected(self, event):
+        &#34;&#34;&#34;Checks if event has been collected&#34;&#34;&#34;
+        cursor = self.cnx.cursor()
+
+
+        query = (&#34;SELECT COUNT(1) FROM `tournaments` WHERE `id` = &#34;+str(event.id))
+        cursor.execute(query)
+
+        if cursor.fetchone()[0] == 0:
+            return False
+        return True
+
+    def allPlaysRecorded(self, card):
+        &#34;&#34;&#34; Returns boolean if all plays for a card have been recorded into the database&#34;&#34;&#34;
+        play_count_query = (&#39;SELECT COUNT(*) FROM `card_series` WHERE `title` =  &#34;&#39;+card.title+&#39;&#34;&#39;)
+        event_count_query = (&#39;SELECT COUNT(*) FROM `tournaments` WHERE `date` &gt;= &#34;&#39;+datetime.datetime.strftime(card.release_date, &#39;%Y-%m-%d&#39;) +&#39;&#34;&#39;)
+
+        cursor = self.cnx.cursor()
+        cursor.execute(play_count_query)
+        play_count = cursor.fetchone()[0]
+
+        cursor = self.cnx.cursor()
+        cursor.execute(event_count_query)
+        event_count = cursor.fetchone()[0]
+
+        if(play_count&gt;event_count):
+            print(&#34;WARNING play count &gt; event_count!!!!&#34;)
+        return(play_count &gt;= event_count)
+
+    def getLastCardPriceByCard(self, card):
+        &#34;&#34;&#34; Returns last price collected for card&#34;&#34;&#34;
+        query = (&#39;SELECT max(`date`) FROM `price_series` WHERE `title` = &#34;&#39;+card.title+&#39;&#34;&#39;)
+        cursor = self.cnx.cursor()
+        cursor.execute(query)
+        result = cursor.fetchone()[0]
+        return result if result != None else None
+
+    def searchCards(self, string):
+
+        query = (&#39;SELECT * FROM `cards` WHERE `title` LIKE &#34;%&#39;+string+&#39;%&#34;&#39;)
+        cursor = self.cnx.cursor()
+        cursor.execute(query)
+        cards =[]
+        for row in cursor.fetchall():
+            cards.append(Card(title=row[0],set = row[1], echo_id = row[5], rarity=row[4], release_date=row[2], rotation_date=row[3]))
+        return cards
+
+    def searchDate(self, string):
+        cursor = self.cnx.cursor(dictionary=True)
+        query = (&#34;SELECT * FROM `card_series` WHERE `date` = &#39;&#34;+string+&#34;&#39; ORDER BY `date` DESC&#34;)
+        cursor.execute(query)
+
+        plays = []
+        for p in cursor.fetchall():
+            # Building the the Objects that CardOccurance wraps around
+            event = Event(event_url=p[&#39;event_&#39;], format=p[&#39;format&#39;], date=p[&#39;date&#39;])
+
+            #Creating a subset of the result to become the CardOccurance.occ attribute
+            tuple_not_in_occ = (&#39;title&#39;, &#39;date&#39;, &#39;price&#39;, &#39;tix&#39;, &#39;event_&#39;, &#39;format&#39;, &#39;echo_id&#39;, &#39;rowid&#39;);
+            occ = {k: p[k] for k in p.keys() if k not in tuple_not_in_occ}
+
+            #TODO append occurance
+
+        return plays</code></pre>
+</details>
+<h3>Methods</h3>
+<dl>
+<dt id="mtgather.models.Database.addCard"><code class="name flex">
+<span>def <span class="ident">addCard</span></span>(<span>self, card)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Adds Card Model to Database.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>card</code></strong></dt>
+<dd>A Card object which contains title, set, echo_id, and release_date.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def addCard(self, card):
+    # TODO: upload release date too
+    &#34;&#34;&#34;Adds Card Model to Database.
+
+    Args:
+        card: A Card object which contains title, set, echo_id, and release_date.
+
+    &#34;&#34;&#34;
+    cursor = self.cnx.cursor()
+    insert_card = (&#34;INSERT INTO cards&#34;
+                    &#34;&#34;&#34;(title,set_mtg, echo_id, rarity)&#34;&#34;&#34;
+                    &#34;VALUES (%s, %s, %s, %s)&#34;)
+    insert_card_data = (card.title, card.set, card.echo_id, card.rarity)
+    try:
+        cursor.execute(insert_card, insert_card_data)
+        self.cnx.commit()
+    except Exception as err:
+        print(err)
+        return False
+    id = cursor.lastrowid
+    return id</code></pre>
+</details>
+</dd>
+<dt id="mtgather.models.Database.addCardOccurance"><code class="name flex">
+<span>def <span class="ident">addCardOccurance</span></span>(<span>self, play)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Adds a CardOccurance Object to the Database</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>play</code></strong></dt>
+<dd>A CardOccurance object</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def addCardOccurance(self, play):
+    &#34;&#34;&#34;Adds a CardOccurance Object to the Database
+
+    Args:
+        play: A CardOccurance object
+    &#34;&#34;&#34;
+    assert isinstance(play, CardOccurance), &#34;Expected instance of CardOccurance, got &#34; + str(play)
+
+    cursor = self.cnx.cursor()
+    insert = (&#34;INSERT INTO card_series&#34;
+                    &#34;&#34;&#34;(rowid, title,date,tot_occ,event_,format,deck_nums,
+                    first_place,secon_place,third_place,fourt_place,
+                    fifth_place,sixth_place,seven_place,eigth_place,
+                    ninet_place,tenth_place,twelt_place,thtee_place,
+                    fotee_place,fitee_place,sitee_place,nineo,eighto,
+                    seveno,sixo,fiveo,sixone,fivetwo,eightone,seventwo,
+                    sevenone,sixtwo,echo_id)&#34;&#34;&#34;
+                    &#34;VALUES (%s, %s, %s, %s, %s, %s, %s, %s,%s,%s, %s, %s, %s,%s, %s, %s, %s,%s, %s, %s, %s,%s, %s, %s, %s,%s, %s, %s, %s,%s, %s, %s, %s,%s)&#34;)
+
+    occ = {
+        &#39;raw&#39;:0,
+        &#39;1st Place&#39;:0,
+        &#39;2nd Place&#39;:0,
+        &#39;3rd Place&#39;:0,
+        &#39;4th Place&#39;:0,
+        &#39;5th Place&#39;:0,
+        &#39;6th Place&#39;:0,
+        &#39;7th Place&#39;:0,
+        &#39;8th Place&#39;:0,
+        &#39;9th Place&#39;:0,
+        &#39;10th Place&#39;:0,
+        &#39;11th Place&#39;:0,
+        &#39;12th Place&#39;:0,
+        &#39;13th Place&#39;:0,
+        &#39;14th Place&#39;:0,
+        &#39;15th Place&#39;:0,
+        &#39;16th Place&#39;:0,
+        &#39;(9-0)&#39;: 0,
+        &#39;(8-0)&#39;: 0,
+        &#39;(7-0)&#39;: 0,
+        &#39;(6-0)&#39;: 0,
+        &#39;(5-0)&#39;: 0,
+        &#39;(6-1)&#39;: 0,
+        &#39;(5-2)&#39;: 0,
+        &#39;(8-1)&#39;: 0,
+        &#39;(7-2)&#39;: 0,
+        &#39;(7-1)&#39;: 0,
+        &#39;(6-2)&#39;: 0
+    }
+    data = play.occ
+    occ.update(data)
+    insert_data = (play.id, play.card.title, play.date, occ[&#39;raw&#39;], str(play.event.event_url),play.format, len(play.event.decks) , occ[&#39;1st Place&#39;],
+                            occ[&#39;2nd Place&#39;], occ[&#39;3rd Place&#39;], occ[&#39;5th Place&#39;], occ[&#39;6th Place&#39;], occ[&#39;7th Place&#39;], occ[&#39;8th Place&#39;],
+                            occ[&#39;9th Place&#39;], occ[&#39;10th Place&#39;], occ[&#39;11th Place&#39;], occ[&#39;12th Place&#39;], occ[&#39;13th Place&#39;], occ[&#39;14th Place&#39;],
+                            occ[&#39;15th Place&#39;], occ[&#39;16th Place&#39;],occ[&#39;(9-0)&#39;],occ[&#39;(8-0)&#39;],occ[&#39;(7-0)&#39;],occ[&#39;(6-0)&#39;],occ[&#39;(5-0)&#39;],
+                            occ[&#39;(6-1)&#39;],occ[&#39;(5-2)&#39;],occ[&#39;(8-1)&#39;],occ[&#39;(7-2)&#39;],occ[&#39;(7-1)&#39;],occ[&#39;(6-2)&#39;],play.card.echo_id)
+
+    try:
+        cursor.execute(insert, insert_data)
+    except IntegrityError as err:
+        print(err)
+        return False
+    self.cnx.commit()</code></pre>
+</details>
+</dd>
+<dt id="mtgather.models.Database.addCardPrice"><code class="name flex">
+<span>def <span class="ident">addCardPrice</span></span>(<span>self, cardprice)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Adds CardPrice object to the database.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>cardprice</code></strong></dt>
+<dd>An instance of a CardPrice object to be serialized and added.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>A boolean describing success of database addition.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def addCardPrice(self, cardprice):
+    &#34;&#34;&#34; Adds CardPrice object to the database.
+
+    Args:
+        cardprice: An instance of a CardPrice object to be serialized and added.
+
+    Returns:
+        A boolean describing success of database addition.
+    &#34;&#34;&#34;
+
+    assert isinstance(cardprice, CardPrice), &#34;Expected instance of CardPrice, got &#34; + str(play)
+
+    cursor = self.cnx.cursor()
+    insert = (&#34;INSERT INTO price_series&#34;
+            &#34;&#34;&#34;(date, title, price, tix, rowid, echo_id)&#34;&#34;&#34;
+            &#34;VALUES (%s, %s, %s, %s, %s, %s)&#34;)
+    rowid= str(cardprice.card.echo_id) + &#34;:&#34; + str(cardprice.date)
+    cpp = float(cardprice.price) if cardprice.price != None else None
+    cpt = float(cardprice.tix) if cardprice.tix != None else None
+    insert_data = (cardprice.date, cardprice.card.title, cpp, cpt, rowid, cardprice.card.echo_id)
+
+    try:
+        cursor.execute(insert, insert_data)
+    except IntegrityError as err:
+        print(err)
+        return False
+    self.cnx.commit()
+    return True</code></pre>
+</details>
+</dd>
+<dt id="mtgather.models.Database.addCardPrices"><code class="name flex">
+<span>def <span class="ident">addCardPrices</span></span>(<span>self, cardprices)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Adds and array of cardprices</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def addCardPrices(self, cardprices):
+    &#34;&#34;&#34; Adds and array of cardprices&#34;&#34;&#34;
+    for p in cardprices:
+        self.addCardPrice(p)</code></pre>
+</details>
+</dd>
+<dt id="mtgather.models.Database.addCards"><code class="name flex">
+<span>def <span class="ident">addCards</span></span>(<span>self, cards)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Adds list of Cards to database using addCard()</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>cards</code></strong></dt>
+<dd>an array of cards.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def addCards(self, cards):
+    &#34;&#34;&#34;Adds list of Cards to database using addCard()
+
+    Args:
+        cards: an array of cards.
+    &#34;&#34;&#34;
+    for card in cards:
+        self.addCard(card)
+        print(str(card.echo_id) + &#34; - &#34; + card.title)</code></pre>
+</details>
+</dd>
+<dt id="mtgather.models.Database.addEvent"><code class="name flex">
+<span>def <span class="ident">addEvent</span></span>(<span>self, event)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Adds Event object to database</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>event</code></strong></dt>
+<dd>An Event object</dd>
+</dl>
+<p>Returns: A boolean, True if successful addition, False if failed.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def addEvent(self, event):
+    &#34;&#34;&#34;Adds Event object to database
+
+    Args:
+        event: An Event object
+
+    Returns: A boolean, True if successful addition, False if failed.
+    &#34;&#34;&#34;
+    cursor = self.cnx.cursor()
+    insert_tournament = (&#34;INSERT INTO tournaments&#34;
+                        &#34;&#34;&#34;(date, url, format, id)&#34;&#34;&#34;
+                        &#34;VALUES (%s, %s, %s, %s)&#34;)
+    insert_values = (event.date, event.event_url, event.format, event.id)
+    try:
+        cursor.execute(insert_tournament, insert_values)
+        self.cnx.commit()
+    except Exception as err:
+        print(err)
+        return False
+    return True</code></pre>
+</details>
+</dd>
+<dt id="mtgather.models.Database.addEvents"><code class="name flex">
+<span>def <span class="ident">addEvents</span></span>(<span>self, events)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Adds list of Event objects using addEvent()</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def addEvents(self, events):
+    &#34;&#34;&#34;Adds list of Event objects using addEvent()&#34;&#34;&#34;
+    for event in events:
+        self.addEvent(event)
+    return True</code></pre>
+</details>
+</dd>
+<dt id="mtgather.models.Database.allPlaysRecorded"><code class="name flex">
+<span>def <span class="ident">allPlaysRecorded</span></span>(<span>self, card)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns boolean if all plays for a card have been recorded into the database</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def allPlaysRecorded(self, card):
+    &#34;&#34;&#34; Returns boolean if all plays for a card have been recorded into the database&#34;&#34;&#34;
+    play_count_query = (&#39;SELECT COUNT(*) FROM `card_series` WHERE `title` =  &#34;&#39;+card.title+&#39;&#34;&#39;)
+    event_count_query = (&#39;SELECT COUNT(*) FROM `tournaments` WHERE `date` &gt;= &#34;&#39;+datetime.datetime.strftime(card.release_date, &#39;%Y-%m-%d&#39;) +&#39;&#34;&#39;)
+
+    cursor = self.cnx.cursor()
+    cursor.execute(play_count_query)
+    play_count = cursor.fetchone()[0]
+
+    cursor = self.cnx.cursor()
+    cursor.execute(event_count_query)
+    event_count = cursor.fetchone()[0]
+
+    if(play_count&gt;event_count):
+        print(&#34;WARNING play count &gt; event_count!!!!&#34;)
+    return(play_count &gt;= event_count)</code></pre>
+</details>
+</dd>
+<dt id="mtgather.models.Database.eventCollected"><code class="name flex">
+<span>def <span class="ident">eventCollected</span></span>(<span>self, event)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Checks if event has been collected</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def eventCollected(self, event):
+    &#34;&#34;&#34;Checks if event has been collected&#34;&#34;&#34;
+    cursor = self.cnx.cursor()
+
+
+    query = (&#34;SELECT COUNT(1) FROM `tournaments` WHERE `id` = &#34;+str(event.id))
+    cursor.execute(query)
+
+    if cursor.fetchone()[0] == 0:
+        return False
+    return True</code></pre>
+</details>
+</dd>
+<dt id="mtgather.models.Database.getCardByID"><code class="name flex">
+<span>def <span class="ident">getCardByID</span></span>(<span>self, id, date=datetime.date(2020, 11, 11))</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Retrieves one card from the database by ECHO ID.</p>
+<p>Retrieves a card from the cards table. If multiple cards are queried (IE two of the same card from different
+sets) then the date arg is used to reconcile which age of card is required. The most recent version available
+is always returned.</p>
+<p>For example:
+Sorcerous Spyglass returns two cards, one from Ixilan and Eldrain. By passing in a date (date of event) we can further
+filter our results. If the event occured before the release of Eldrain then the Ixilan version is return.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>title</code></strong></dt>
+<dd>a string of the title of the desired card.</dd>
+<dt><strong><code>date</code></strong></dt>
+<dd>a datetime object to resolve multiple cards of the same name.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>A Card object.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getCardByID(self, id, date=date.today()):
+    &#34;&#34;&#34;Retrieves one card from the database by ECHO ID.
+
+    Retrieves a card from the cards table. If multiple cards are queried (IE two of the same card from different
+    sets) then the date arg is used to reconcile which age of card is required. The most recent version available
+    is always returned.
+
+    For example:
+        Sorcerous Spyglass returns two cards, one from Ixilan and Eldrain. By passing in a date (date of event) we can further
+        filter our results. If the event occured before the release of Eldrain then the Ixilan version is return.
+
+    Args:
+        title: a string of the title of the desired card.
+        date: a datetime object to resolve multiple cards of the same name.
+
+    Returns:
+        A Card object.
+    &#34;&#34;&#34;
+    cursor = self.cnx.cursor()
+    query = (&#34;SELECT * FROM `cards` WHERE `echo_id` = %s AND `release_date` &lt;= %s ORDER BY `release_date` DESC&#34;)
+    values = (id, date)
+    try:
+        cursor.execute(query, values)
+    except Exception as err:
+        print(err)
+        return False
+
+    try:
+        data = cursor.fetchall()[0]
+    except IndexError:
+        return False
+
+    return Card(title=data[0], set=data[1], echo_id=data[5], rarity=data[4], release_date=data[2])</code></pre>
+</details>
+</dd>
+<dt id="mtgather.models.Database.getCardByTitle"><code class="name flex">
+<span>def <span class="ident">getCardByTitle</span></span>(<span>self, title, date=datetime.date(2020, 11, 11))</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Retrieves one card from the database by title.</p>
+<p>Retrieves a card from the cards table. If multiple cards are queried (IE two of the same card from different
+sets) then the date arg is used to reconcile which age of card is required. The most recent version available
+is always returned.</p>
+<p>For example:
+Sorcerous Spyglass returns two cards, one from Ixilan and Eldrain. By passing in a date (date of event) we can further
+filter our results. If the event occured before the release of Eldrain then the Ixilan version is return.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>title</code></strong></dt>
+<dd>a string of the title of the desired card.</dd>
+<dt><strong><code>date</code></strong></dt>
+<dd>a datetime object to resolve multiple cards of the same name.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>A Card object.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getCardByTitle(self, title, date=date.today()):
+    # RESOLVE: What happens when there is no card by this name?
+    &#34;&#34;&#34;Retrieves one card from the database by title.
+
+    Retrieves a card from the cards table. If multiple cards are queried (IE two of the same card from different
+    sets) then the date arg is used to reconcile which age of card is required. The most recent version available
+    is always returned.
+
+    For example:
+        Sorcerous Spyglass returns two cards, one from Ixilan and Eldrain. By passing in a date (date of event) we can further
+        filter our results. If the event occured before the release of Eldrain then the Ixilan version is return.
+
+    Args:
+        title: a string of the title of the desired card.
+        date: a datetime object to resolve multiple cards of the same name.
+
+    Returns:
+        A Card object.
+    &#34;&#34;&#34;
+    cursor = self.cnx.cursor()
+    query = (&#34;SELECT * FROM `cards` WHERE `title` = %s AND `release_date` &lt;= %s ORDER BY `release_date` DESC&#34;)
+    values = (title, date)
+    try:
+        cursor.execute(query, values)
+    except Exception as err:
+        print(err)
+        return False
+
+    try:
+        data = cursor.fetchall()[0]
+    except IndexError:
+        return False
+
+    return Card(title=data[0], set=data[1], echo_id=data[5], rarity=data[4], release_date=data[2])</code></pre>
+</details>
+</dd>
+<dt id="mtgather.models.Database.getCardPriceByDate"><code class="name flex">
+<span>def <span class="ident">getCardPriceByDate</span></span>(<span>self, card, date)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Retrieves a the price of a card at a specific date</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>card</code></strong></dt>
+<dd>Card object containing data about the desired card price.</dd>
+<dt><strong><code>date</code></strong></dt>
+<dd>datetime of the desired price.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getCardPriceByDate(self, card, date):
+    &#34;&#34;&#34; Retrieves a the price of a card at a specific date
+
+    Args:
+        card: Card object containing data about the desired card price.
+        date: datetime of the desired price.
+    &#34;&#34;&#34;
+
+    cursor = self.cnx.cursor(dictionary=True)
+    query = (&#34;SELECT * FROM `price_series` WHERE `title` = %s AND `date` = %s&#34;)
+    data = (card.title, date)
+    cursor.execute(query, data)
+    return cursor.fetchone()</code></pre>
+</details>
+</dd>
+<dt id="mtgather.models.Database.getCardSeriesDataFrame"><code class="name flex">
+<span>def <span class="ident">getCardSeriesDataFrame</span></span>(<span>self, card, format=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns a pandas dataframe of card plays by card</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getCardSeriesDataFrame(self, card, format=None):
+    &#34;&#34;&#34; Returns a pandas dataframe of card plays by card&#34;&#34;&#34;
+    cursor = self.cnx.cursor(dictionary=True)
+
+    if format != None:
+        query = (&#34;SELECT * FROM `card_series` WHERE `echo_id` = &#39;&#34;+str(card.echo_id)+&#34;&#39; AND `format`=&#39;&#34;+format+&#34;&#39; ORDER BY `date` DESC&#34;)
+    else:
+        query = (&#34;SELECT * FROM `card_series` WHERE `title` = &#39;&#34;+card.title+&#34;&#39; ORDER BY `date` DESC&#34;)
+
+    cursor.execute(query)
+
+    return pd.DataFrame(cursor.fetchall())</code></pre>
+</details>
+</dd>
+<dt id="mtgather.models.Database.getCards"><code class="name flex">
+<span>def <span class="ident">getCards</span></span>(<span>self, from_date=datetime.date(2017, 9, 28))</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Retrieves all cards in the Cards table.</p>
+<h2 id="returns">Returns</h2>
+<p>Array of Card objects.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getCards(self, from_date= date(2017, 9, 28)):
+    &#34;&#34;&#34;Retrieves all cards in the Cards table.
+
+    Returns:
+        Array of Card objects.
+    &#34;&#34;&#34;
+    cursor = self.cnx.cursor()
+    query = (&#34;SELECT * FROM `cards` &#34;
+            &#34; WHERE rotation_date is NULL OR rotation_date &gt;= %s &#34;)
+    vals = (from_date,)
+    cursor.execute(query,vals)
+    cards = []
+    for row in cursor.fetchall():
+        cards.append(Card(title=row[0],set = row[1], echo_id = row[5], rarity=row[4], release_date=row[2], rotation_date=row[3]))
+    return cards</code></pre>
+</details>
+</dd>
+<dt id="mtgather.models.Database.getLastCardPriceByCard"><code class="name flex">
+<span>def <span class="ident">getLastCardPriceByCard</span></span>(<span>self, card)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns last price collected for card</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getLastCardPriceByCard(self, card):
+    &#34;&#34;&#34; Returns last price collected for card&#34;&#34;&#34;
+    query = (&#39;SELECT max(`date`) FROM `price_series` WHERE `title` = &#34;&#39;+card.title+&#39;&#34;&#39;)
+    cursor = self.cnx.cursor()
+    cursor.execute(query)
+    result = cursor.fetchone()[0]
+    return result if result != None else None</code></pre>
+</details>
+</dd>
+<dt id="mtgather.models.Database.getLastEventDate"><code class="name flex">
+<span>def <span class="ident">getLastEventDate</span></span>(<span>self, format=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Retrieves the date of the event collected</p>
+<p>This method is useful for when there is weekly/daily collection so a script can pickup where it left off.</p>
+<h2 id="returns">Returns</h2>
+<p>A datetime date object.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getLastEventDate(self, format=None):
+    &#34;&#34;&#34;Retrieves the date of the event collected
+
+    This method is useful for when there is weekly/daily collection so a script can pickup where it left off.
+
+    Returns:
+        A datetime date object.
+    &#34;&#34;&#34;
+    cursor = self.cnx.cursor()
+    query = (&#34;&#34;&#34;SELECT MAX(date) FROM `tournaments`;&#34;&#34;&#34;)
+    if format!= None:
+        query = (&#34;SELECT MAX(date) FROM `tournaments` WHERE `format` = &#39;&#34;+format+&#34;&#39;;&#34;)
+    try:
+        cursor.execute(query)
+    except Exception as err:
+        print(err)
+        return False
+
+    for row in cursor.fetchall():
+        if row[0]==None:
+            return False
+        return row[0]
+    return False</code></pre>
+</details>
+</dd>
+<dt id="mtgather.models.Database.getLastTimelineDate"><code class="name flex">
+<span>def <span class="ident">getLastTimelineDate</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Deprecated: Retrieves the date of the occurance collected</p>
+<p>This method is useful for when there is weekly/daily collection so a script can pickup where it left off.</p>
+<h2 id="returns">Returns</h2>
+<p>A datetime date object.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getLastTimelineDate(self):
+    &#34;&#34;&#34;Deprecated: Retrieves the date of the occurance collected
+
+    This method is useful for when there is weekly/daily collection so a script can pickup where it left off.
+
+    Returns:
+        A datetime date object.
+    &#34;&#34;&#34;
+    cursor = self.cnx.cursor()
+    query = (&#34;&#34;&#34;SELECT MAX(date) FROM `card_series`;&#34;&#34;&#34;)
+    try:
+        cursor.execute(query)
+    except Exception as err:
+        print(err)
+        return False
+
+    for row in cursor.fetchall():
+        if row[0]==None:
+            return False
+        return row[0]
+    return False</code></pre>
+</details>
+</dd>
+<dt id="mtgather.models.Database.getOccurancesByCard"><code class="name flex">
+<span>def <span class="ident">getOccurancesByCard</span></span>(<span>self, card)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Retrieves a list of CardOccurance in database based on card</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getOccurancesByCard(self, card):
+    &#34;&#34;&#34;Retrieves a list of CardOccurance in database based on card&#34;&#34;&#34;
+
+    cursor = self.cnx.cursor(dictionary=True)
+    query = (&#34;SELECT * FROM `card_series` WHERE `title` = &#39;&#34;+card.title+&#34;&#39; ORDER BY `date` DESC&#34;)
+    cursor.execute(query)
+
+    plays = []
+    for p in cursor.fetchall():
+        # Building the the Objects that CardOccurance wraps around
+        event = Event(event_url=p[&#39;event_&#39;], format=p[&#39;format&#39;], date=p[&#39;date&#39;])
+
+        #Creating a subset of the result to become the CardOccurance.occ attribute
+        tuple_not_in_occ = (&#39;title&#39;, &#39;date&#39;, &#39;price&#39;, &#39;tix&#39;, &#39;event_&#39;, &#39;format&#39;, &#39;echo_id&#39;, &#39;rowid&#39;);
+        occ = {k: p[k] for k in p.keys() if k not in tuple_not_in_occ}
+
+        plays.append(CardOccurance(card, event, occ=occ))
+
+    return plays</code></pre>
+</details>
+</dd>
+<dt id="mtgather.models.Database.getPriceSeriesDataFrame"><code class="name flex">
+<span>def <span class="ident">getPriceSeriesDataFrame</span></span>(<span>self, card)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns a pandas dataframe of prices by card</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getPriceSeriesDataFrame(self, card):
+    &#34;&#34;&#34; Returns a pandas dataframe of prices by card&#34;&#34;&#34;
+    cursor = self.cnx.cursor(dictionary=True)
+
+    query = (&#34;SELECT * FROM `price_series` WHERE `title` = &#39;&#34;+card.title+&#34;&#39; ORDER BY `date` ASC&#34;)
+
+    cursor.execute(query)
+
+    return pd.DataFrame(cursor.fetchall())</code></pre>
+</details>
+</dd>
+<dt id="mtgather.models.Database.getTournamentSeriesDataFrame"><code class="name flex">
+<span>def <span class="ident">getTournamentSeriesDataFrame</span></span>(<span>self, format=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns a pandas dataframe of all events based on MTG event format</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getTournamentSeriesDataFrame(self, format=None):
+    &#34;&#34;&#34; Returns a pandas dataframe of all events based on MTG event format&#34;&#34;&#34;
+    cursor = self.cnx.cursor(dictionary=True)
+
+    if format != None:
+        query = (&#34;SELECT * FROM `tournaments` WHERE `format`=&#39;&#34;+format+&#34;&#39; ORDER BY `date` DESC&#34;)
+    else:
+        query = (&#34;SELECT * FROM `tournaments` WHERE 1 ORDER BY `date` DESC&#34;)
+
+    cursor.execute(query)
+
+    return pd.DataFrame(cursor.fetchall())</code></pre>
+</details>
+</dd>
+<dt id="mtgather.models.Database.isConnected"><code class="name flex">
+<span>def <span class="ident">isConnected</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns if connection is connected</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def isConnected(self):
+    &#34;&#34;&#34;Returns if connection is connected&#34;&#34;&#34;
+    if(self.cnx != None):
+        return True
+    else:
+        return False</code></pre>
+</details>
+</dd>
+<dt id="mtgather.models.Database.searchCards"><code class="name flex">
+<span>def <span class="ident">searchCards</span></span>(<span>self, string)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def searchCards(self, string):
+
+    query = (&#39;SELECT * FROM `cards` WHERE `title` LIKE &#34;%&#39;+string+&#39;%&#34;&#39;)
+    cursor = self.cnx.cursor()
+    cursor.execute(query)
+    cards =[]
+    for row in cursor.fetchall():
+        cards.append(Card(title=row[0],set = row[1], echo_id = row[5], rarity=row[4], release_date=row[2], rotation_date=row[3]))
+    return cards</code></pre>
+</details>
+</dd>
+<dt id="mtgather.models.Database.searchDate"><code class="name flex">
+<span>def <span class="ident">searchDate</span></span>(<span>self, string)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def searchDate(self, string):
+    cursor = self.cnx.cursor(dictionary=True)
+    query = (&#34;SELECT * FROM `card_series` WHERE `date` = &#39;&#34;+string+&#34;&#39; ORDER BY `date` DESC&#34;)
+    cursor.execute(query)
+
+    plays = []
+    for p in cursor.fetchall():
+        # Building the the Objects that CardOccurance wraps around
+        event = Event(event_url=p[&#39;event_&#39;], format=p[&#39;format&#39;], date=p[&#39;date&#39;])
+
+        #Creating a subset of the result to become the CardOccurance.occ attribute
+        tuple_not_in_occ = (&#39;title&#39;, &#39;date&#39;, &#39;price&#39;, &#39;tix&#39;, &#39;event_&#39;, &#39;format&#39;, &#39;echo_id&#39;, &#39;rowid&#39;);
+        occ = {k: p[k] for k in p.keys() if k not in tuple_not_in_occ}
+
+        #TODO append occurance
+
+    return plays</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="mtgather.models.Event"><code class="flex name class">
+<span>class <span class="ident">Event</span></span>
+<span>(</span><span>event_url, decks=[], id=-1, date='', format=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Event Datatype</p>
+<p>Event class is used to represent one event from MTG Goldfish. The Events class acts as a model for one row in a MySQL database.</p>
+<h2 id="attributes">Attributes</h2>
+<dl>
+<dt><strong><code>event_url</code></strong></dt>
+<dd>A string of format "/tournament/<int number>". This is a relative url on www.mtggoldfish.com.</dd>
+<dt><strong><code>decks</code></strong></dt>
+<dd>An array if deck id's from mtggoldfish.com. Represntative of the decks that placed in the event.</dd>
+<dt><strong><code>date</code></strong></dt>
+<dd>A date object at the day the event occured.</dd>
+<dt><strong><code>id</code></strong></dt>
+<dd>An int pulled from event_url as a unique id for the event.</dd>
+<dt><strong><code>format</code></strong></dt>
+<dd>A str representation of format. 'standard','pioneer','modern'</dd>
+</dl>
+<p>Inits Event with an event url</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Event:
+    &#34;&#34;&#34;Event Datatype
+
+    Event class is used to represent one event from MTG Goldfish. The Events class acts as a model for one row in a MySQL database.
+
+    Attributes:
+        event_url: A string of format &#34;/tournament/&lt;int number&gt;&#34;. This is a relative url on www.mtggoldfish.com.
+        decks: An array if deck id&#39;s from mtggoldfish.com. Represntative of the decks that placed in the event.
+        date: A date object at the day the event occured.
+        id: An int pulled from event_url as a unique id for the event.
+        format: A str representation of format. &#39;standard&#39;,&#39;pioneer&#39;,&#39;modern&#39;
+    &#34;&#34;&#34;
+
+    def __init__(self, event_url, decks=[], id=-1, date=&#34;&#34;, format=None):
+        &#34;&#34;&#34;Inits Event with an event url&#34;&#34;&#34;
+        self.event_url = event_url
+        self.decks = decks
+        self.date = date
+        self.id = id
+        self.format = format
+        if id==-1 and event_url:
+            self.id = int(event_url.split(&#39;/&#39;)[-1])
+
+    def __str__(self):
+        &#34;&#34;&#34;Converts to printable string&#34;&#34;&#34;
+        #return self.event_url +&#34; : &#34;+ datetime.strftime(self.date, &#34;%Y-%m-%d&#34;)
+        return self.event_url +&#34; : &#34;+ datetime.strftime(self.date, &#34;%Y-%m-%d&#34;)
+
+    def __eq__(self, o):
+        &#34;&#34;&#34;Overides == operator : compares based on Event.id&#34;&#34;&#34;
+        return isinstance(o, Event) and self.id == o.id
+
+    def __repr__(self):
+        object = {
+            &#34;id&#34;:self.id,
+            &#34;event_url&#34; :self.event_url,
+            &#34;format&#34;: self.format,
+            &#34;date&#34;: datetime.strftime(self.date, &#34;%Y-%m-%d&#34;),
+            &#34;decks&#34;: self.decks,
+        }
+        return (&#34;(%s)&#34; % ( object[&#39;id&#39;]))
+
+    def getEventURL(self):
+        &#34;&#34;&#34;Deprecated: Getter for event_url&#34;&#34;&#34;
+        return self.event_url
+
+    def getDecks(self):
+        &#34;&#34;&#34;Deprecated: Getter for decks&#34;&#34;&#34;
+        return self.decks
+
+    def isEmpty(self):
+        &#34;&#34;&#34;Returns Status of empty&#34;&#34;&#34;
+        return len(self.decks) == 0;
+
+    def getDate(self):
+        &#34;&#34;&#34;Gives string representation of date&#34;&#34;&#34;
+        return datetime.strptime(self.date, &#34;%Y-%m-%d&#34;).date()
+        #return self.date
+
+    def setDecks(self, decks):
+        &#34;&#34;&#34;Deprecated: Setter of decks&#34;&#34;&#34;
+        self.decks = decks
+
+    def addDeck(self, deck):
+        &#34;&#34;&#34;Adds deck to decks&#34;&#34;&#34;
+        self.decks.append(deck);
+        return deck
+
+    def getID(self):
+        &#34;&#34;&#34;Deprecated: Getter of id&#34;&#34;&#34;
+        return self.id
+
+    def setOcc(self, occ):
+        &#34;&#34;&#34;Deprecated: setter of occ&#34;&#34;&#34;
+        self.occ = occ
+
+    def getOcc(self):
+        &#34;&#34;&#34;Deprecated: getter of occ&#34;&#34;&#34;
+        return self.occ
+
+    def setCardOccurances(self, cards):
+        &#34;&#34;&#34;Deprecated: setter of occurance objects&#34;&#34;&#34;
+        self.card_occurances = cards
+
+    def addCardOccurance(self, card_occurance):
+        &#34;&#34;&#34;Deprecated: adds one occurance to occurance objects&#34;&#34;&#34;
+        if(card_occurance not in self.card_occurances):
+            self.card_occurances.append(card_occurance)
+            return True
+        return False
+
+    def getCardOccurances(self):
+        &#34;&#34;&#34;Deprecated: getter of card_occurances&#34;&#34;&#34;
+        return self.card_occurances</code></pre>
+</details>
+<h3>Methods</h3>
+<dl>
+<dt id="mtgather.models.Event.addCardOccurance"><code class="name flex">
+<span>def <span class="ident">addCardOccurance</span></span>(<span>self, card_occurance)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Deprecated: adds one occurance to occurance objects</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def addCardOccurance(self, card_occurance):
+    &#34;&#34;&#34;Deprecated: adds one occurance to occurance objects&#34;&#34;&#34;
+    if(card_occurance not in self.card_occurances):
+        self.card_occurances.append(card_occurance)
+        return True
+    return False</code></pre>
+</details>
+</dd>
+<dt id="mtgather.models.Event.addDeck"><code class="name flex">
+<span>def <span class="ident">addDeck</span></span>(<span>self, deck)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Adds deck to decks</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def addDeck(self, deck):
+    &#34;&#34;&#34;Adds deck to decks&#34;&#34;&#34;
+    self.decks.append(deck);
+    return deck</code></pre>
+</details>
+</dd>
+<dt id="mtgather.models.Event.getCardOccurances"><code class="name flex">
+<span>def <span class="ident">getCardOccurances</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Deprecated: getter of card_occurances</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getCardOccurances(self):
+    &#34;&#34;&#34;Deprecated: getter of card_occurances&#34;&#34;&#34;
+    return self.card_occurances</code></pre>
+</details>
+</dd>
+<dt id="mtgather.models.Event.getDate"><code class="name flex">
+<span>def <span class="ident">getDate</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Gives string representation of date</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getDate(self):
+    &#34;&#34;&#34;Gives string representation of date&#34;&#34;&#34;
+    return datetime.strptime(self.date, &#34;%Y-%m-%d&#34;).date()</code></pre>
+</details>
+</dd>
+<dt id="mtgather.models.Event.getDecks"><code class="name flex">
+<span>def <span class="ident">getDecks</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Deprecated: Getter for decks</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getDecks(self):
+    &#34;&#34;&#34;Deprecated: Getter for decks&#34;&#34;&#34;
+    return self.decks</code></pre>
+</details>
+</dd>
+<dt id="mtgather.models.Event.getEventURL"><code class="name flex">
+<span>def <span class="ident">getEventURL</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Deprecated: Getter for event_url</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getEventURL(self):
+    &#34;&#34;&#34;Deprecated: Getter for event_url&#34;&#34;&#34;
+    return self.event_url</code></pre>
+</details>
+</dd>
+<dt id="mtgather.models.Event.getID"><code class="name flex">
+<span>def <span class="ident">getID</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Deprecated: Getter of id</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getID(self):
+    &#34;&#34;&#34;Deprecated: Getter of id&#34;&#34;&#34;
+    return self.id</code></pre>
+</details>
+</dd>
+<dt id="mtgather.models.Event.getOcc"><code class="name flex">
+<span>def <span class="ident">getOcc</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Deprecated: getter of occ</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getOcc(self):
+    &#34;&#34;&#34;Deprecated: getter of occ&#34;&#34;&#34;
+    return self.occ</code></pre>
+</details>
+</dd>
+<dt id="mtgather.models.Event.isEmpty"><code class="name flex">
+<span>def <span class="ident">isEmpty</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns Status of empty</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def isEmpty(self):
+    &#34;&#34;&#34;Returns Status of empty&#34;&#34;&#34;
+    return len(self.decks) == 0;</code></pre>
+</details>
+</dd>
+<dt id="mtgather.models.Event.setCardOccurances"><code class="name flex">
+<span>def <span class="ident">setCardOccurances</span></span>(<span>self, cards)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Deprecated: setter of occurance objects</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def setCardOccurances(self, cards):
+    &#34;&#34;&#34;Deprecated: setter of occurance objects&#34;&#34;&#34;
+    self.card_occurances = cards</code></pre>
+</details>
+</dd>
+<dt id="mtgather.models.Event.setDecks"><code class="name flex">
+<span>def <span class="ident">setDecks</span></span>(<span>self, decks)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Deprecated: Setter of decks</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def setDecks(self, decks):
+    &#34;&#34;&#34;Deprecated: Setter of decks&#34;&#34;&#34;
+    self.decks = decks</code></pre>
+</details>
+</dd>
+<dt id="mtgather.models.Event.setOcc"><code class="name flex">
+<span>def <span class="ident">setOcc</span></span>(<span>self, occ)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Deprecated: setter of occ</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def setOcc(self, occ):
+    &#34;&#34;&#34;Deprecated: setter of occ&#34;&#34;&#34;
+    self.occ = occ</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="mtgather" href="index.html">mtgather</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="mtgather.models.daterange" href="#mtgather.models.daterange">daterange</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="mtgather.models.Card" href="#mtgather.models.Card">Card</a></code></h4>
+<ul class="">
+<li><code><a title="mtgather.models.Card.CardPrices" href="#mtgather.models.Card.CardPrices">CardPrices</a></code></li>
+<li><code><a title="mtgather.models.Card.dateparse" href="#mtgather.models.Card.dateparse">dateparse</a></code></li>
+<li><code><a title="mtgather.models.Card.isEmpty" href="#mtgather.models.Card.isEmpty">isEmpty</a></code></li>
+<li><code><a title="mtgather.models.Card.occ_data_columns" href="#mtgather.models.Card.occ_data_columns">occ_data_columns</a></code></li>
+<li><code><a title="mtgather.models.Card.price_data_columns" href="#mtgather.models.Card.price_data_columns">price_data_columns</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="mtgather.models.CardOccurance" href="#mtgather.models.CardOccurance">CardOccurance</a></code></h4>
+</li>
+<li>
+<h4><code><a title="mtgather.models.CardPrice" href="#mtgather.models.CardPrice">CardPrice</a></code></h4>
+</li>
+<li>
+<h4><code><a title="mtgather.models.Database" href="#mtgather.models.Database">Database</a></code></h4>
+<ul class="">
+<li><code><a title="mtgather.models.Database.addCard" href="#mtgather.models.Database.addCard">addCard</a></code></li>
+<li><code><a title="mtgather.models.Database.addCardOccurance" href="#mtgather.models.Database.addCardOccurance">addCardOccurance</a></code></li>
+<li><code><a title="mtgather.models.Database.addCardPrice" href="#mtgather.models.Database.addCardPrice">addCardPrice</a></code></li>
+<li><code><a title="mtgather.models.Database.addCardPrices" href="#mtgather.models.Database.addCardPrices">addCardPrices</a></code></li>
+<li><code><a title="mtgather.models.Database.addCards" href="#mtgather.models.Database.addCards">addCards</a></code></li>
+<li><code><a title="mtgather.models.Database.addEvent" href="#mtgather.models.Database.addEvent">addEvent</a></code></li>
+<li><code><a title="mtgather.models.Database.addEvents" href="#mtgather.models.Database.addEvents">addEvents</a></code></li>
+<li><code><a title="mtgather.models.Database.allPlaysRecorded" href="#mtgather.models.Database.allPlaysRecorded">allPlaysRecorded</a></code></li>
+<li><code><a title="mtgather.models.Database.eventCollected" href="#mtgather.models.Database.eventCollected">eventCollected</a></code></li>
+<li><code><a title="mtgather.models.Database.getCardByID" href="#mtgather.models.Database.getCardByID">getCardByID</a></code></li>
+<li><code><a title="mtgather.models.Database.getCardByTitle" href="#mtgather.models.Database.getCardByTitle">getCardByTitle</a></code></li>
+<li><code><a title="mtgather.models.Database.getCardPriceByDate" href="#mtgather.models.Database.getCardPriceByDate">getCardPriceByDate</a></code></li>
+<li><code><a title="mtgather.models.Database.getCardSeriesDataFrame" href="#mtgather.models.Database.getCardSeriesDataFrame">getCardSeriesDataFrame</a></code></li>
+<li><code><a title="mtgather.models.Database.getCards" href="#mtgather.models.Database.getCards">getCards</a></code></li>
+<li><code><a title="mtgather.models.Database.getLastCardPriceByCard" href="#mtgather.models.Database.getLastCardPriceByCard">getLastCardPriceByCard</a></code></li>
+<li><code><a title="mtgather.models.Database.getLastEventDate" href="#mtgather.models.Database.getLastEventDate">getLastEventDate</a></code></li>
+<li><code><a title="mtgather.models.Database.getLastTimelineDate" href="#mtgather.models.Database.getLastTimelineDate">getLastTimelineDate</a></code></li>
+<li><code><a title="mtgather.models.Database.getOccurancesByCard" href="#mtgather.models.Database.getOccurancesByCard">getOccurancesByCard</a></code></li>
+<li><code><a title="mtgather.models.Database.getPriceSeriesDataFrame" href="#mtgather.models.Database.getPriceSeriesDataFrame">getPriceSeriesDataFrame</a></code></li>
+<li><code><a title="mtgather.models.Database.getTournamentSeriesDataFrame" href="#mtgather.models.Database.getTournamentSeriesDataFrame">getTournamentSeriesDataFrame</a></code></li>
+<li><code><a title="mtgather.models.Database.isConnected" href="#mtgather.models.Database.isConnected">isConnected</a></code></li>
+<li><code><a title="mtgather.models.Database.searchCards" href="#mtgather.models.Database.searchCards">searchCards</a></code></li>
+<li><code><a title="mtgather.models.Database.searchDate" href="#mtgather.models.Database.searchDate">searchDate</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="mtgather.models.Event" href="#mtgather.models.Event">Event</a></code></h4>
+<ul class="two-column">
+<li><code><a title="mtgather.models.Event.addCardOccurance" href="#mtgather.models.Event.addCardOccurance">addCardOccurance</a></code></li>
+<li><code><a title="mtgather.models.Event.addDeck" href="#mtgather.models.Event.addDeck">addDeck</a></code></li>
+<li><code><a title="mtgather.models.Event.getCardOccurances" href="#mtgather.models.Event.getCardOccurances">getCardOccurances</a></code></li>
+<li><code><a title="mtgather.models.Event.getDate" href="#mtgather.models.Event.getDate">getDate</a></code></li>
+<li><code><a title="mtgather.models.Event.getDecks" href="#mtgather.models.Event.getDecks">getDecks</a></code></li>
+<li><code><a title="mtgather.models.Event.getEventURL" href="#mtgather.models.Event.getEventURL">getEventURL</a></code></li>
+<li><code><a title="mtgather.models.Event.getID" href="#mtgather.models.Event.getID">getID</a></code></li>
+<li><code><a title="mtgather.models.Event.getOcc" href="#mtgather.models.Event.getOcc">getOcc</a></code></li>
+<li><code><a title="mtgather.models.Event.isEmpty" href="#mtgather.models.Event.isEmpty">isEmpty</a></code></li>
+<li><code><a title="mtgather.models.Event.setCardOccurances" href="#mtgather.models.Event.setCardOccurances">setCardOccurances</a></code></li>
+<li><code><a title="mtgather.models.Event.setDecks" href="#mtgather.models.Event.setDecks">setDecks</a></code></li>
+<li><code><a title="mtgather.models.Event.setOcc" href="#mtgather.models.Event.setOcc">setOcc</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.9.1</a>.</p>
+</footer>
+</body>
+</html>
