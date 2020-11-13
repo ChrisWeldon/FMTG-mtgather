@@ -14,3 +14,9 @@ pip install git+https://github.com/ChrisWeldon/FMTG-mtgather.git
 ```
 
 Documentation can be found here at http://www.chriswevans.com/FMTG/mtgather
+
+to run tests:
+```
+pip install nose
+nosetests
+```
