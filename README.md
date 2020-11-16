@@ -13,10 +13,25 @@ To install:
 pip install git+https://github.com/ChrisWeldon/FMTG-mtgather.git
 ```
 
-Documentation can be found here at http://www.chriswevans.com/FMTG/mtgather
+API reference can be found here at http://www.chriswevans.com/FMTG/mtgather
 
-to run tests:
+## Usage
+To connect library to mysql Database:
+Setup environment variable ```GATHERCONFIG = 'path/to/config.json'```
+
+The configuration file:
 ```
-pip install nose
-nosetests
+{
+  "database": {
+      "database_name": <name-of-database>,
+      "dev_database_name" : <name-of-dev-database>,
+      "user":<login-user>,
+      "password":<login-password>,
+      "host":<host-ip-or-domain>,
+      "use_pure": <use-pure-acces> // FALSE suggested
+    },
+  "path": <path to log files>, // Deprecated, replaced soon
+  "dev": <boolean-in-dev-mode>, // Deprecated, replaced soon
+}
+
 ```
