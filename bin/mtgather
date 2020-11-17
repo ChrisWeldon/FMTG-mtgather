@@ -112,10 +112,7 @@ if __name__ == "__main__":
     print(sys.argv)
     if(len(sys.argv)>1 and sys.argv[1]=='test'):
         print("Running tests")
-        #TODO figure out how to integrate nosetests into python script
-        return
 
     if(len(sys.argv)>1 and sys.argv[1]=='collect-series'):
         updateCardOccurances(format='standard')
         updateCardOccurances(format='pioneer')
-        return
