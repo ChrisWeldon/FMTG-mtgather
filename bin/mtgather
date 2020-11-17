@@ -3,6 +3,7 @@
 import sys, os
 from mtgather import Card, CardPrice, Event, CardOccurance, Database, ServerError, ThrottleError
 from mtgather import getEventsDay, getEventData, getOccDataByEvent
+import nose
 
 from datetime import date, timedelta
 import time
@@ -108,5 +109,13 @@ def updateCardOccurances(format='standard'):
         del events[0]
 
 if __name__ == "__main__":
-    updateCardOccurances(format='standard')
-    updateCardOccurances(format='pioneer')
+    print(sys.argv)
+    if(len(sys.argv)>1 and sys.argv[1]=='test'):
+        print("Running tests")
+        //TODO figure out how to integrate nosetests into python script
+        return
+
+    if(len(sys.argv)>1 and sys.argv[1]=='collect-series'):
+        updateCardOccurances(format='standard')
+        updateCardOccurances(format='pioneer')
+        return

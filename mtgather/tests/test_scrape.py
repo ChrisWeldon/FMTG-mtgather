@@ -1,7 +1,7 @@
 from unittest import TestCase
 import json
 from datetime import datetime
-from mtgather import getCardsBySet, getEventsDay, getEventsDayOnePage, getEventData, getOccDataByEvent, getPaperPriceByCard, getMTGOPriceByCard
+from mtgather import getCardsBySet, getEventsDay, getEventData, getOccDataByEvent, getPaperPriceByCard, getMTGOPriceByCard
 
 ''' A Test designed to test the active scraping functions.
 This test is especially helpful for when mtggoldfish and mtgecho change
