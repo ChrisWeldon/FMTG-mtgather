@@ -1,13 +1,13 @@
 #!/usr/bin/env python
 
-import sys, os
+import sys, os, json, time
 from dotenv import load_dotenv
 from mtgather import Card, CardPrice, Event, CardOccurance, Database, ServerError, ThrottleError
 from mtgather import getEventsDay, getEventData, getOccDataByEvent
-import nose
-
 from datetime import date, timedelta
-import time
+
+import nose
+import requests
 
 
 def throttleWait(wait=30):
@@ -25,9 +25,61 @@ def concat(list1, list2):
         if e not in list1:
             list1.append(e)
 
+def makeEmbed(data):
+    embed = {}
+
+    embed = {
+        "title": data['format'],
+        "fields":[
+            {
+                "name": "start",
+                "value": data['start-collect'].strftime('%m/%d/%Y'),
+                "inline":True
+            },
+            {
+                "name": "end",
+                "value": data['end-collect'].strftime('%m/%d/%Y'),
+                "inline":True
+            },
+            {
+                "name": "total events",
+                "value": data['total-events'],
+                "inline":True
+            },
+            {
+                "name": "total decks",
+                "value": data['total-decks'],
+                "inline":True
+            },
+            {
+                "name": "total occurances",
+                "value": data['total-occurances'],
+                "inline":True
+            },
+            {
+                "name": "total duplicate occurances",
+                "value": data['total-duplicate-occurances'],
+                "inline":True
+            },
+
+        ]
+    }
+
+
+    return embed
 
 def updateCardOccurances(format='standard'):
     # Oldest set release date 10/05/2018
+    analytics = {
+        "format" : format,
+        "start-collect" : None,
+        "end-collect" : None,
+        "total-decks": 0,
+        "total-occurances":0,
+        "total-events": 0,
+        "total-duplicate-occurances":0
+    }
+
     FORMAT = format
     START_DATE = date(2019, 10, 4)
     print('RUNNING ON ', FORMAT)
@@ -35,15 +87,20 @@ def updateCardOccurances(format='standard'):
     try:
         config_path = os.environ['GATHERCONFIG']
     except KeyError as e:
+        #TODO throw error here
         print("ENV variable GATHERCONFIG not set")
         return
     print(config_path)
     db = Database(path=config_path)
     if(not db.getLastEventDate(format=FORMAT)):
         dates_tocheck = daterange(START_DATE, date.today())
+        analytics["start-collect"] = START_DATE
     else:
-        dates_tocheck = daterange(db.getLastEventDate(format=FORMAT), date.today())
+        start_collect = db.getLastEventDate(format=FORMAT)
+        dates_tocheck = daterange(start_collect, date.today())
+        analytics["start-collect"] = start_collect
 
+    analytics["end-collect"] = date.today()
     # Temporary overeride while I grab missed on tournamnts.
     #dates_tocheck = daterange(START_DATE, date.today())
 
@@ -60,6 +117,7 @@ def updateCardOccurances(format='standard'):
         else:
             dates_tocheck.pop(0)
 
+    analytics['total-events'] = len(events)
 
     db = Database(path=config_path)
     # CACHED CARDS TO ELIMINATE REDUNDANT CALLS TO GOATBOTS AND ECHO
@@ -85,7 +143,9 @@ def updateCardOccurances(format='standard'):
                 print(err, " : ", events.pop(0))
                 continue
             else:
-                event.decks = decks;
+                event.decks = decks
+
+        analytics['total-decks'] += len(event.decks)
 
         try:
             occ = getOccDataByEvent(event)
@@ -105,16 +165,16 @@ def updateCardOccurances(format='standard'):
                     print(card)
                     raise Exception(e)
 
+        analytics['total-occurances'] += len(occurances)
         for c in occurances:
-            db.addCardOccurance(c)
+            added = db.addCardOccurance(c)
+            if not added:
+                analytics['total-duplicate-occurances'] +=1
         db.addEvent(events[0])
         del events[0]
 
-def botCallCreator(bot):
+    return analytics
 
-    def callback():
-        broadcast(bot, "Helloworld")
-    return callback
 
 if __name__ == "__main__":
     load_dotenv()
@@ -123,5 +183,24 @@ if __name__ == "__main__":
         print("Running tests")
 
     if(len(sys.argv)>1 and sys.argv[1]=='collect-series'):
-        updateCardOccurances(format='standard')
-        updateCardOccurances(format='pioneer')
+        standard_analytics = updateCardOccurances(format='standard')
+        pioneer_analytics = updateCardOccurances(format='pioneer')
+
+        webhook = os.getenv("WEBHOOK")
+        if(webhook!=None):
+            data = {
+                "content" : "Scraping completed.",
+                "embeds": []
+            }
+
+            data['embeds'].append(makeEmbed(standard_analytics))
+            data['embeds'].append(makeEmbed(pioneer_analytics))
+
+            res = requests.post(webhook, data=json.dumps(data), headers={"Content-Type": "application/json"})
+
+            try:
+                res.raise_for_status()
+            except requests.exceptions.HTTPError as err:
+                print(err)
+            else:
+                print("Payload delivered successfully, code {}.".format(res.status_code))
