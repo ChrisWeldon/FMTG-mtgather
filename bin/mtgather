@@ -61,6 +61,12 @@ def makeEmbed(data):
                 "value": data['total-duplicate-occurances'],
                 "inline":True
             },
+            {
+                "name": "Last event",
+                "value": data['date-of-last-event'].strftime('%m/%d/%Y'),
+                "inline": True
+
+            }
 
         ]
     }
@@ -77,7 +83,8 @@ def updateCardOccurances(format='standard'):
         "total-decks": 0,
         "total-occurances":0,
         "total-events": 0,
-        "total-duplicate-occurances":0
+        "total-duplicate-occurances":0,
+        "date-of-last-event":0
     }
 
     FORMAT = format
@@ -173,6 +180,7 @@ def updateCardOccurances(format='standard'):
         db.addEvent(events[0])
         del events[0]
 
+    analytics['date-of-last-event'] = db.getLastEventDate(format=format)
     return analytics
 
 

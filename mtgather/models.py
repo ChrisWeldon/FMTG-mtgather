@@ -521,6 +521,7 @@ class Database:
             print(err)
             return False
         self.cnx.commit()
+        return True
 
     def addCardPrice(self, cardprice):
         """ Adds CardPrice object to the database.
