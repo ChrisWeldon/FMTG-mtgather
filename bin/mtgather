@@ -1,10 +1,11 @@
 #!/usr/bin/env python
 
+# SCRIPTS EMBEDDED INTO THE PACKAGE TO COLLECT THE DATA
 import sys, os, json, time
 from dotenv import load_dotenv
 from mtgather import Card, CardPrice, Event, CardOccurance, Database, ServerError, ThrottleError
-from mtgather import getEventsDay, getEventData, getOccDataByEvent
-from datetime import date, timedelta
+from mtgather import getEventsDay, getEventData, getOccDataByEvent, getCardsBySet
+from datetime import date, timedelta, datetime
 
 import nose
 import requests
@@ -74,7 +75,7 @@ def makeEmbed(data):
 
     return embed
 
-def updateCardOccurances(format='standard'):
+def updateCardOccurances(format='standard', start_collect=None):
     # Oldest set release date 10/05/2018
     analytics = {
         "format" : format,
@@ -88,7 +89,7 @@ def updateCardOccurances(format='standard'):
     }
 
     FORMAT = format
-    START_DATE = date(2019, 10, 4)
+    START_DATE = start_collect
     print('RUNNING ON ', FORMAT)
 
     try:
@@ -99,30 +100,36 @@ def updateCardOccurances(format='standard'):
         return
     print(config_path)
     db = Database(path=config_path)
-    if(not db.getLastEventDate(format=FORMAT)):
-        dates_tocheck = daterange(START_DATE, date.today())
-        analytics["start-collect"] = START_DATE
-    else:
-        start_collect = db.getLastEventDate(format=FORMAT)
-        dates_tocheck = daterange(start_collect, date.today())
-        analytics["start-collect"] = start_collect
+
+    if(db.getLastEventDate(format=FORMAT) and start_collect == None):
+        # if Db is empty
+        START_DATE = db.getLastEventDate(format=FORMAT)
+
+    dates_tocheck = daterange(START_DATE, date.today())
+    analytics["start-collect"] = START_DATE
 
     analytics["end-collect"] = date.today()
-    # Temporary overeride while I grab missed on tournamnts.
-    #dates_tocheck = daterange(START_DATE, date.today())
 
-    del db
-    events = []
-    print("GETTING TOURNAMENTS")
-    while len(dates_tocheck) > 0:
-        print(dates_tocheck[0])
-        try:
-            concat(events, getEventsDay(date = dates_tocheck[0], format=FORMAT))
-        except (ServerError, ThrottleError) as err:
-            print(err)
-            throttleWait()
-        else:
-            dates_tocheck.pop(0)
+    # Temporary overeride to grab missed on tournamnts.
+    dates_tocheck = daterange(START_DATE, date.today())
+
+
+    if(start_collect == None):
+        del db
+        events = []
+        print("GETTING TOURNAMENTS")
+        while len(dates_tocheck) > 0:
+            print(dates_tocheck[0])
+            try:
+                concat(events, getEventsDay(date = dates_tocheck[0], format=FORMAT))
+            except (ServerError, ThrottleError) as err:
+                print(err)
+                throttleWait()
+            else:
+                dates_tocheck.pop(0)
+        db = Database(path=config_path)
+    else:
+        events = db.getEvents(start_collect)
 
     analytics['total-events'] = len(events)
 
@@ -134,6 +141,7 @@ def updateCardOccurances(format='standard'):
         occurances = []
         event = events[0]
         print(event)
+
         # if(db.eventCollected(event)):
         #     del events[0]
         #     print("(Collected)")
@@ -162,9 +170,8 @@ def updateCardOccurances(format='standard'):
             continue
 
         for title in occ.keys():
-
+            # This is where the rotation_date comes into play
             card = db.getCardByTitle(title, date=event.date)
-
             if card!=False:
                 try:
                     occurances.append(CardOccurance(card, event, occ[title],date=event.date));
@@ -190,9 +197,17 @@ if __name__ == "__main__":
     if(len(sys.argv)>1 and sys.argv[1]=='test'):
         print("Running tests")
 
-    if(len(sys.argv)>1 and sys.argv[1]=='collect-series'):
-        standard_analytics = updateCardOccurances(format='standard')
-        pioneer_analytics = updateCardOccurances(format='pioneer')
+    elif(len(sys.argv)>1 and sys.argv[1]=='collect-series'):
+        start_collect = None
+        if(len(sys.argv)>2 and sys.argv[2]):
+            try:
+                start_collect = datetime.strptime(sys.argv[2], "%Y-%m-%d").date()
+            except ValueError as e:
+                print(e)
+                print("\t Not a valid Date Argument in argv")
+
+        standard_analytics = updateCardOccurances(format='standard', start_collect=start_collect)
+        pioneer_analytics = updateCardOccurances(format='pioneer', start_collect=start_collect)
 
         webhook = os.getenv("WEBHOOK")
         if(webhook!=None):
@@ -212,3 +227,27 @@ if __name__ == "__main__":
                 print(err)
             else:
                 print("Payload delivered successfully, code {}.".format(res.status_code))
+
+    elif(len(sys.argv)>1 and sys.argv[1]=='collect-cards'):
+        try:
+            config_path = os.environ['GATHERCONFIG']
+        except KeyError as e:
+            #TODO throw error here
+            print("ENV variable GATHERCONFIG not set")
+
+        print(config_path)
+        db = Database(path=config_path)
+        sets = db.getSets()
+        for set in sets:
+            print(set)
+            cards = getCardsBySet(set_url=set.echo_url, rarities=['rare', 'mythic', 'mythic-rare'])
+            db.addCards(cards)
+
+    else:
+        try:
+            config_path = os.environ['GATHERCONFIG']
+            print(config_path)
+            db = Database(path=config_path)
+        except KeyError as e:
+            #TODO throw error here
+            print("ENV variable GATHERCONFIG not set")
