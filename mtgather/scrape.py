@@ -35,7 +35,7 @@ def getCardsBySet(set_url="/set/THB/theros-beyond-death/", rarities=['rare', 'my
                         'url': card.find('a', class_='list-item')['href'],
                         'rarity': card['class'][0],
                         'id': card.find('a', class_='list-item')['href'].split('/')[2],
-                        'set': set_url})
+                        'set': set_url.split('/')[2]})
 
     return_cards = []
     for object in data:

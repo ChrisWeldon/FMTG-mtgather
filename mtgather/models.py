@@ -27,6 +27,9 @@ class Card:
 
     Deprecated Attributes are not incuded in Documentation.
 
+    TODO:
+        Strip of non usefull attribute
+
     Attributes:
         title: A string of title of the card.
         price: A Pandas Dataframe of the paper pricing history.
@@ -185,6 +188,36 @@ class CardOccurance:
         """Overrides the == operator to establish equality based on the card and the event"""
         isinstance(o, CardOccurance) and self.card == o.card and self.event == o.event
 
+class Set:
+    """Set Datatype
+
+    TODO description
+
+    Attributes:
+        TODO
+    """
+    def __init__(self, code, title=None, release_date=None, prerelease_date=None, echo_url=None, rot_out_standard=None, tot_rares=None, tot_mythics=None):
+        """Initialization of the Set"""
+        self.code = code
+        self.title = title
+        self.release_date=release_date
+        self.prerelease_date=prerelease_date
+        self.echo_url=echo_url
+        self.rot_out_standard=rot_out_standard
+        self.tot_rares=tot_rares
+        self.tot_mythics=tot_mythics
+
+
+    def __repr__(self):
+        return "<({}) {}>".format(self.code, self.title)
+
+    def __str__(self):
+        return self.title
+
+    def __eq__(self, o):
+        """Overrides the == operator to establish equality based on the card and the event"""
+        isinstance(o, Set) and self.code == o.code
+
 class CardPrice:
 
     """CardPrice Datatype
@@ -278,7 +311,7 @@ class Database:
         """
         cursor = self.cnx.cursor()
         insert_card = ("INSERT INTO cards"
-                        """(title,set_mtg, echo_id, rarity)"""
+                        """(title,code, echo_id, rarity)"""
                         "VALUES (%s, %s, %s, %s)")
         insert_card_data = (card.title, card.set, card.echo_id, card.rarity)
         try:
@@ -298,7 +331,22 @@ class Database:
         """
         for card in cards:
             self.addCard(card)
-            print(str(card.echo_id) + " - " + card.title)
+            print(card)
+
+    def getSets(self, from_date= date(2017, 9, 28)):
+        """Retrieves all sets in the Sets table.
+
+        Returns:
+            Array of Set objects.
+        """
+        cursor = self.cnx.cursor(dictionary=True)
+        query = ("SELECT * FROM `sets` ")
+        cursor.execute(query)
+        sets = []
+        for row in cursor.fetchall():
+            sets.append(Set(row['code'], title=row['title'], prerelease_date=row['prerelease_date'], echo_url=row['echo_url'],
+                release_date=row['release_date'], rot_out_standard=row['rot_out_standard'], tot_rares=row['tot_rares'], tot_mythics=row['tot_mythics']))
+        return sets
 
     def getCards(self, from_date= date(2017, 9, 28)):
         """Retrieves all cards in the Cards table.
@@ -306,14 +354,14 @@ class Database:
         Returns:
             Array of Card objects.
         """
-        cursor = self.cnx.cursor()
+        cursor = self.cnx.cursor(dictionary=True)
         query = ("SELECT * FROM `cards` "
                 " WHERE rotation_date is NULL OR rotation_date >= %s ")
         vals = (from_date,)
         cursor.execute(query,vals)
         cards = []
         for row in cursor.fetchall():
-            cards.append(Card(title=row[0],set = row[1], echo_id = row[5], rarity=row[4], release_date=row[2], rotation_date=row[3]))
+            cards.append(Card(title=row['title'], set = row['code'], echo_id = row['echo_id'], rarity=row['rarity'], rotation_date=row['rotation_date']))
         return cards
 
     def getCardByTitle(self, title, date=date.today()):
@@ -335,8 +383,12 @@ class Database:
         Returns:
             A Card object.
         """
-        cursor = self.cnx.cursor()
-        query = ("SELECT * FROM `cards` WHERE `title` = %s AND `release_date` <= %s ORDER BY `release_date` DESC")
+
+        #TODO factorin rotation_date
+        cursor = self.cnx.cursor(dictionary=True)
+        query = ("SELECT `cards`.`title`, `cards`.`code`, `cards`.`echo_id`, `cards`.`rarity`, `sets`.`release_date`, `sets`.`rot_out_standard` "
+        "FROM `cards` INNER JOIN `sets` ON `cards`.`code`=`sets`.`code`"
+        "WHERE `cards`.`title` = %s AND `sets`.`release_date` <= %s ORDER BY `sets`.`release_date` DESC")
         values = (title, date)
         try:
             cursor.execute(query, values)
@@ -349,7 +401,7 @@ class Database:
         except IndexError:
             return False
 
-        return Card(title=data[0], set=data[1], echo_id=data[5], rarity=data[4], release_date=data[2])
+        return Card(title=data['title'], set=data['code'], echo_id=data['echo_id'], rarity=data['rarity'], rotation_date=data['rot_out_standard'])
 
     def getCardByID(self, id, date=date.today()):
         """Retrieves one card from the database by ECHO ID.
@@ -369,7 +421,7 @@ class Database:
         Returns:
             A Card object.
         """
-        cursor = self.cnx.cursor()
+        cursor = self.cnx.cursor(dictionary=True)
         query = ("SELECT * FROM `cards` WHERE `echo_id` = %s AND `release_date` <= %s ORDER BY `release_date` DESC")
         values = (id, date)
         try:
@@ -383,7 +435,7 @@ class Database:
         except IndexError:
             return False
 
-        return Card(title=data[0], set=data[1], echo_id=data[5], rarity=data[4], release_date=data[2])
+        return Card(title=data['title'], set=data['code'], echo_id=data['echo_id'], rarity=data['rarity'], rotation_date=rotation_date['rotation_date'])
 
     def addEvent(self, event):
         """Adds Event object to database
@@ -411,6 +463,20 @@ class Database:
         for event in events:
             self.addEvent(event)
         return True
+
+    def getEvents(self, from_date):
+        """Retrieves all the events past date (inclusive) """
+
+        cursor = self.cnx.cursor(dictionary=True)
+        query = ("SELECT * FROM `tournaments` "
+                " WHERE date >= %s ")
+        vals = (from_date,)
+        cursor.execute(query,vals)
+        events = []
+        for row in cursor.fetchall():
+            events.append(Event(row['url'], format=row['format'], date=row['date'], id=['id']))
+
+        return events
 
     def getLastTimelineDate(self):
         """Deprecated: Retrieves the date of the occurance collected
@@ -732,7 +798,7 @@ class Event:
             "date": datetime.strftime(self.date, "%Y-%m-%d"),
             "decks": self.decks,
         }
-        return ("(%s)" % ( object['id']))
+        return ("(%s)" %  (self.id) )
 
     def getEventURL(self):
         """Deprecated: Getter for event_url"""
