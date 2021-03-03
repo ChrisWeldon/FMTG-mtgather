@@ -393,7 +393,7 @@ class Database:
         try:
             cursor.execute(query, values)
         except Exception as err:
-            print(err)
+            print("func getCardByTitle: ", err)
             return False
 
         try:
